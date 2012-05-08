@@ -1,0 +1,21 @@
+
+set from	= "luk@example.com"
+set imap_user	= "luk"
+set imap_idle	= no
+ 
+set folder	= imaps://mail.example.com/
+set spoolfile	= +INBOX
+
+mailboxes +INBOX 
+mailboxes +Sent 
+mailboxes +Drafts 
+mailboxes +Trash 
+
+set record	= +Sent
+set trash	= +Trash
+set postponed	= +Drafts
+
+set smtp_url	  = smtps://luk@mail.example.com
+set ssl_force_tls = yes
+
+# vim: ft=muttrc

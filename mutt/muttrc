@@ -1,0 +1,71 @@
+
+# ---------------------------------------------------------------------------
+# - Main configuration file
+# ---------------------------------------------------------------------------
+
+# general config
+  set alias_file          = ~/.mutt/aliases
+  set certificate_file    = ~/.mutt/certificates 
+  set header_cache        = ~/.mutt/cache/headers
+  set message_cachedir    = ~/.mutt/cache/bodies
+  set mailcap_path        = ~/.mutt/mailcap 
+  set signature           = ~/.signature 
+  set tmpdir              = ~/tmp
+  set editor              = "vim +:silent+?^$" 
+  set ispell              = "aspell -e -c"
+  set print_command       = "muttprint" 
+  set move                = no				
+  set noconfirmappend
+  set quit                = ask-yes
+  set metoo               = yes
+  set copy                = yes
+  set envelope_from       = yes
+  set sort                = threads
+  set thread_received
+  set sort_alias          = alias
+  set reverse_alias       = yes
+  set query_command       = "abook --mutt-query '%s'" 
+  set pager_index_lines   = 10
+  set menu_scroll         = no
+  set pager_context       = 5
+  set pager_stop
+  set tilde
+unset markers
+unset wait_key
+  set include
+  set fast_reply 
+  set forward_format      = "Fwd: %s"
+  set mail_check          = 2
+  set check_new           = yes
+  set realname            = "Lukasz Szczesny"
+  set charset             = utf-8
+
+auto_view text/html
+alternative_order text/plain text/html text/enriched 
+
+set index_format="%4C %Z %{%b %d/%m} | %-15.15L | %s"
+set status_format = "-%r- %v ───────/ %f %m%?n? [+%n]?%?d? [-%d]?%?t? [*%t]? /%?p?───/ %p waiting to send /?─%>─(%P)───"
+
+# headers
+ignore      *
+unignore    from: to: cc: bcc: subject: date:
+unignore    reply-to: user-agent:
+hdr_order   From: To: CC: Subject: Date: To: Bcc: User-agent:
+my_hdr      X-Operating-System: `uname -a`
+
+# keybinds
+bind	pager	<up>		previous-line
+bind	pager	<down>		next-line
+bind	pager	G		bottom
+bind index "^" imap-fetch-mail
+ 
+source ~/.mutt/profiles/default
+
+source $alias_file
+source ~/.mutt/colors
+source ~/.mutt/gpg
+source ~/.mutt/lists
+source ~/.mutt/macros
+source `FILE=$HOME/.mutt/sidebar; mutt -v | grep -Fq sidebar || FILE=/dev/null; echo $FILE`
+
+# vim: ft=muttrc

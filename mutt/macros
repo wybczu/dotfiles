@@ -1,0 +1,11 @@
+
+# ---------------------------------------------------------------------------
+# - Macros
+# ---------------------------------------------------------------------------
+
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index ,f "<shell-escape>rm -rf ~/.mu/results; mu find -l ~/.mu/results <change-folder-readonly>~/.mu/results\n" "mu-find"
+macro index ,i "<change-folder>!<return>" "go to inbox
+
+# vim: ft=muttrc
