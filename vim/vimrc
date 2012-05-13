@@ -26,7 +26,7 @@ set ignorecase
 set smartcase
 set autoindent
 set completeopt-=preview
-set mouse=a
+"set mouse=a
 set title
 set foldmethod=indent
 set foldlevel=99
