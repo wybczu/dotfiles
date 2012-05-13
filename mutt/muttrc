@@ -11,7 +11,7 @@
   set mailcap_path        = ~/.mutt/mailcap 
   set signature           = ~/.signature 
   set tmpdir              = ~/tmp
-  set editor              = "vim +:silent+?^$" 
+  set editor              = "vim" 
   set ispell              = "aspell -e -c"
   set print_command       = "muttprint" 
   set move                = no				

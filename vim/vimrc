@@ -1,0 +1,59 @@
+"
+" -- VIM configuration --
+"
+
+filetype off
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
+
+set nomodeline
+set backspace=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+"set expandtab
+set smarttab
+set showcmd
+"set number
+set showmatch
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set autoindent
+set completeopt-=preview
+set mouse=a
+set title
+set foldmethod=indent
+set foldlevel=99
+"set colorcolumn=80
+"set cursorline
+set laststatus=2
+set background=dark
+
+set t_Co=256
+colorscheme desert256
+
+"set encoding=utf8
+set spelllang=pl
+
+" shift fixes
+cmap W w
+cmap WQ wq
+cmap wQ wq
+cmap Q q
+cmap Tabe tabe
+
+autocmd BufRead *.txt set tw=78
+
+set backupdir=~/.vim/sessions
+set dir=~/.vim/sessions
+set backup
+
+au BufNewFile *.py   so ~/.vim/templates/tpl.py
+au BufNewFile *.php  so ~/.vim/templates/tpl.php
+
