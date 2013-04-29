@@ -12,7 +12,6 @@ URxvt.underlineURLs: true
 URxvt.foreground: #93a1a1
 URxvt.background: #000000
 URxvt.highlightColor: #343434
-URxvt.transparent: #000000
 URxvt.color0: #2E3436
 URxvt.color1: #CC0000
 URxvt.color2: #4E9A06
@@ -30,4 +29,3 @@ URxvt.color13: #AD7FA8
 URxvt.color14: #34E2E2
 URxvt.color15: #EEEEEC
 
-*fading: 10

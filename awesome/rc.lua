@@ -37,7 +37,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/luk/.config/awesome/themes/foo/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/foo/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
@@ -228,7 +228,7 @@ globalkeys = awful.util.table.join(
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
-    awful.key({ modkey,           }, "p", function () awful.util.spawn('/usr/local/bin/x_run.sh') end),
+    awful.key({ modkey,           }, "p", function () awful.util.spawn(os.getenv("HOME") .. "/.config/awesome/bin/dmenu.sh") end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
