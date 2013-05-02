@@ -37,7 +37,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/foo/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/dark/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
@@ -373,3 +373,33 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+
+-- {{{ Autorun
+
+function run_once(prg,arg_string,pname,screen)
+	if not prg then
+		do return nil end
+	end
+	
+	if not pname then
+		pname = prg
+	end
+	
+	if not arg_string then
+		awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. ")",screen)
+	else
+		awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")",screen)
+	end
+end
+
+awful.util.spawn('xset b off')
+awful.util.spawn('xset b 0 0 0')
+
+run_once("xscreensaver", "-no-splash")
+run_once("xfsettingsd")
+run_once("xfce4-power-manager")
+run_once("xfce4-volumed")
+run_once("nm-applet")
+run_once("wmname", "LG3D")
+
+-- }}}

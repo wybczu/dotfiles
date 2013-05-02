@@ -52,9 +52,10 @@ cmap Tabe tabe
 autocmd BufRead *.txt set tw=78
 
 
-set backupdir=~/.vim/sessions
-set dir=~/.vim/sessions
+set backupdir=~/.vim/backups
 set backup
+
+let g:livepreview_previewer = 'evince'
 
 au BufNewFile *.py   so ~/.vim/templates/tpl.py
 au BufNewFile *.php  so ~/.vim/templates/tpl.php
