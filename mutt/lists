@@ -3,6 +3,15 @@
 # - Lists
 # ---------------------------------------------------------------------------
 
-subscribe lxc-users@lists.sourceforge.net
+subscribe \
+	awesome@naquadah.org \
+	fosdem@lists.fosdem.org \
+	vserver@list.linux-vserver.org \
+	centos-announce@centos.org \
+	oss-security@lists.openwall.com \
+	debian-announce@lists.debian.org \
+	debian-security-announce@lists.debian.org \
+	debian-news@lists.debian.org
+
 
 # vim: ft=muttrc

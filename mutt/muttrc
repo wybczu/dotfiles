@@ -6,61 +6,61 @@
 # general config
   set alias_file          = ~/.mutt/aliases
   set certificate_file    = ~/.mutt/certificates 
-  set header_cache        = ~/.mutt/cache/headers
-  set message_cachedir    = ~/.mutt/cache/bodies
-  set mailcap_path        = ~/.mutt/mailcap 
-  set signature           = ~/.signature 
-  set tmpdir              = ~/tmp
-  set editor              = "vim" 
-  set ispell              = "aspell -e -c"
-  set print_command       = "muttprint" 
-  set move                = no				
-  set noconfirmappend
-  set quit                = ask-yes
-  set metoo               = yes
+  set charset             = utf-8
+  set check_new           = yes
   set copy                = yes
+  set editor              = "vim" 
   set envelope_from       = yes
-  set sort                = threads
-  set thread_received
-  set sort_alias          = alias
-  set reverse_alias       = yes
-  set query_command       = "abook --mutt-query '%s'" 
-  set pager_index_lines   = 10
-  set menu_scroll         = no
-  set pager_context       = 5
-  set pager_stop
-  set tilde
-unset markers
-unset wait_key
-  set include
   set fast_reply 
   set forward_format      = "Fwd: %s"
+  set include
+  set index_format        ="%4C %Z %{%b %d/%m} | %-15.15L | %s"
+  set ispell              = "aspell -e -c"
+#  set mailcap_path        = ~/.mutt/mailcap 
+  set mailcap_path        = /etc/mailcap 
   set mail_check          = 2
-  set check_new           = yes
-  set realname            = "Lukasz Szczesny"
-  set charset             = utf-8
+unset markers
+  set menu_scroll         = no
+  set metoo               = yes
+  set move                = no				
+  set noconfirmappend
+  set pager_context       = 5
+  set pager_index_lines   = 10
+  set pager_stop
+  set print_command       = "muttprint" 
+  set query_command       = "abook --mutt-query '%s'" 
+  set quit                = ask-yes
+  set reverse_alias       = yes
+  set signature           = ~/.signature 
+  set sort_alias          = alias
+  set sort                = threads
+  set thread_received
+  set tilde
+  set tmpdir              = ~/tmp
+unset wait_key
 
-auto_view text/html
+# cache
+  set header_cache        = ~/.mutt/cache/headers
+  set message_cachedir    = ~/.mutt/cache/bodies
+
+#
 alternative_order text/plain text/html text/enriched 
-
-set index_format="%4C %Z %{%b %d/%m} | %-15.15L | %s"
-set status_format = "-%r- %v ───────/ %f %m%?n? [+%n]?%?d? [-%d]?%?t? [*%t]? /%?p?───/ %p waiting to send /?─%>─(%P)───"
+auto_view text/html
 
 # headers
 ignore      *
-unignore    from: to: cc: bcc: subject: date:
-unignore    reply-to: user-agent:
+unignore    From: To: Cc: Bcc: Subject: Date:
+unignore    Reply-to: User-agent:
 hdr_order   From: To: CC: Subject: Date: To: Bcc: User-agent:
+
 my_hdr      X-Operating-System: `uname -a`
 
 # keybinds
-bind	pager	<up>		previous-line
-bind	pager	<down>		next-line
-bind	pager	G		bottom
-bind index "^" imap-fetch-mail
- 
-source ~/.mutt/profiles/default
+bind    pager   <up>        previous-line
+bind    pager   <down>      next-line
+bind    pager   G           bottom
 
+source ~/.mutt/account
 source $alias_file
 source ~/.mutt/colors
 source ~/.mutt/gpg

@@ -1,11 +1,29 @@
-
 # ---------------------------------------------------------------------------
 # - Macros
 # ---------------------------------------------------------------------------
 
-macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
-macro index ,f "<shell-escape>rm -rf ~/.mu/results; mu find -l ~/.mu/results <change-folder-readonly>~/.mu/results\n" "mu-find"
-macro index ,i "<change-folder>!<return>" "go to inbox
+macro index C \
+	"<copy-message>?<toggle-mailboxes>" \
+	"copy a message to a mailbox"
+
+macro index M \
+	"<save-message>?<toggle-mailboxes>" \
+	"move a message to a mailbox"
+
+macro index <F8> \
+	"<enter-command>unset wait_key<enter><shell-escape>notmuch-mutt --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>" \
+	"search mail (using notmuch)"
+
+macro index <F9> \
+	"<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" \
+	"search and reconstruct owning thread (using notmuch)"
+
+macro index S \
+	"<shell-escape>offlineimap<enter>" \
+	"run offlineimap to sync all mail"
+
+macro index s \
+	"<shell-escape>offlineimap -f INBOX<enter>" \
+	"run offlineimap to sync inbox"
 
 # vim: ft=muttrc

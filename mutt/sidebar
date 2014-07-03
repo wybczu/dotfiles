@@ -1,11 +1,10 @@
-
 # ---------------------------------------------------------------------------
 # - Sidebar 
 # ---------------------------------------------------------------------------
 
-set sidebar_width=24
-set sidebar_visible=yes
-set sidebar_delim="|"
+set sidebar_width   = 24
+set sidebar_visible = yes
+set sidebar_delim   = "|"
 
 bind index \CP sidebar-prev
 bind index \CN sidebar-next
