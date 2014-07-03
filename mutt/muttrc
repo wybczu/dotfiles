@@ -16,7 +16,6 @@
   set include
   set index_format        ="%4C %Z %{%b %d/%m} | %-15.15L | %s"
   set ispell              = "aspell -e -c"
-#  set mailcap_path        = ~/.mutt/mailcap 
   set mailcap_path        = /etc/mailcap 
   set mail_check          = 2
 unset markers
