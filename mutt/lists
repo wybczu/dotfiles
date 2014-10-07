@@ -13,5 +13,4 @@ subscribe \
 	debian-security-announce@lists.debian.org \
 	debian-news@lists.debian.org
 
-
 # vim: ft=muttrc
