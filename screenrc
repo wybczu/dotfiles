@@ -1,0 +1,12 @@
+hardstatus string '%{=b b}[%c:%s %d/%m/%y] %{=b r}[%l] %{=b y}[%H] %{=b dg}[%?%-Lw%?%{=r}%n*%f%t%?(%u)%?%{=b dg}%?%+Lw%?]'
+caption always "%{= kb}[ %{G}%H::$USER %{b}][ %=%{w}%?%-Lw%?%{R}(%{G}%n*%f %t%?(%u)%?%{R})%{w}%?%+Lw%?%?%= %{b}][ %{kB} Load: %l %{kB} | %{B} %Y.%m.%d %{W}%0c %{b} ]"
+crlf off
+startup_message off
+defscrollback 5000
+shell -$SHELL
+defmonitor on
+activity "%"
+vbell off
+autodetach on 
+nonblock on
+term screen-256color
