@@ -1,22 +1,23 @@
 
-Xft.antialias:         true
+Xft.antialias: true
 Xft.rgba: rgb
-Xft.hinting:                true
+Xft.hinting: true
 
 URxvt.termName: rxvt-256color
 URxvt.imLocale: pl_PL.UTF-8
 URxvt.saveLines: 9000
 URxvt.cursorBlink: true
 URxvt.font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*
-URxvt.scrollBar:false
+URxvt.scrollBar: false
 URxvt.geometry: 99x30
-URxvt.perl-ext-common: default,matcher,selection-popup,option-popup,searchable-scrollback<M-s>,readline,url-select,font-size
-URxvt.keysym.C-Up:     perl:font-size:increase
-URxvt.keysym.C-Down:   perl:font-size:decrease
-URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.perl-ext-common: default,matcher,searchable-scrollback<M-s>,readline,font-size
+URxvt.keysym.C-Up: perl:font-size:increase
+URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.keysym.C-S-Up: perl:font-size:incglobal
 URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.urlLauncher: iceweasel
 URxvt.underlineURLs: true
+URxvt.keysym.M-Delete: perl:matcher:list
 URxvt.foreground: #93a1a1
 URxvt.background: #000000
 URxvt.highlightColor: #343434
