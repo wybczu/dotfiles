@@ -51,17 +51,14 @@ cmap Tabe tabe
 
 autocmd BufRead *.txt set tw=78
 
-
 set backupdir=~/.vim/backups
 set backup
-
 
 au BufNewFile *.py   so ~/.vim/templates/tpl.py
 au BufNewFile *.php  so ~/.vim/templates/tpl.php
 au BufRead mutt-* setlocal spell spelllang=pl
 au BufRead *.tex setlocal spell spelllang=pl
 au BufRead *.twig   set ft=html
-
 
 " jump to the last position when  reopening a file
 if has("autocmd")
@@ -75,5 +72,9 @@ map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
 
+nmap <leader>t :NERDTree<CR>
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+
 let g:livepreview_previewer = 'evince'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
