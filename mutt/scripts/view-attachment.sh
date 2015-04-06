@@ -17,11 +17,11 @@ fi
 
 ATTACHMENT_FILE="$1"
 FILENAME="$( basename "${ATTACHMENT_PATH}" )"
-TIMESTAMP="$( date '+%Y%m%d-%k%M%S' )"
 
-mkdir -p "${OUTPUT_DIR}/${TIMESTAMP}"
-cp "${ATTACHMENT_FILE}" "${OUTPUT_DIR}/${TIMESTAMP}"
+cp "${ATTACHMENT_FILE}" "${OUTPUT_DIR}"
 
-echo "View attachment ${FILENAME} at ${VIEWING_URL}/${TIMESTAMP}/${FILENAME}"
+chmod og+r "${OUTPUT_DIR}/${FILENAME}" 
+
+echo "View attachment ${FILENAME} at ${VIEWING_URL}/${FILENAME}"
 read -rsp $'Press any key to continue...\n' -n 1 dummy 
 
