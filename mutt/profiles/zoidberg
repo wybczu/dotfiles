@@ -1,16 +1,6 @@
 
-set realname   = "Lukasz Szczesny"
-set from       = luk@wybcz.pl
 set folder     = $HOME/Mail
-
-set mbox_type  = Maildir
 set spoolfile  = +INBOX
-set mask       = !^\\.[^.]
-set record     = +Sent
-set postponed  = +Drafts
-set trash      = +Trash
-
-alternates     = luk@mimuw.edu.pl
 
 mailboxes "+INBOX" `\\
 

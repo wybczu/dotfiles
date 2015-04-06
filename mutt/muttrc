@@ -59,7 +59,9 @@ bind    pager   <up>        previous-line
 bind    pager   <down>      next-line
 bind    pager   G           bottom
 
-source ~/.mutt/account
+source ~/.mutt/profiles/common
+# machine specific configuration
+source `FILE=$HOME/.mutt/profiles/$( hostname -s); [ -f $FILE ] || FILE=/dev/null; echo $FILE`
 source $alias_file
 source ~/.mutt/colors
 source ~/.mutt/gpg
