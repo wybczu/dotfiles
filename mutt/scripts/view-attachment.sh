@@ -16,7 +16,7 @@ if [[ ! -d "${OUTPUT_DIR}" ]]; then
 fi
 
 ATTACHMENT_FILE="$1"
-FILENAME="$( basename "${ATTACHMENT_PATH}" )"
+FILENAME="$( basename "${ATTACHMENT_FILE}" )"
 
 cp "${ATTACHMENT_FILE}" "${OUTPUT_DIR}"
 
