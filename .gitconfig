@@ -1,19 +1,18 @@
-[user]
-    name = Lukasz Szczesny
-    email = luk@wybcz.pl
 
 [color]
     ui = auto
 
+; based on https://github.com/jakubnabrdalik/gitkurwa
 [alias]
-    # borrowed from https://github.com/jakubnabrdalik/gitkurwa
     hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
     llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
     showorigin = !sh -c "isHash=true; for i in `git ls-remote -h origin`; do [ ! -z $isHash ] && echo \" $i\" || printf \"%-8s %8s %-8s%-3s %-10s %-20s\" `git show -s --pretty=format:\"%C(yellow)%h %Cred%ad %Cblue%an\" --date=relative $i` ; [ ! -z $isHash ] && isHash=\"\" || isHash=true ; done"
     tag-with-date = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
-    purr = pull --rebase
     unstage = reset HEAD --
-    st = status
+    patch = !sh -c 'git format-patch --stdout $0...$0~'
+    purr = pull --rebase
+    puff = pull --ff-only
+    st = status -sb
 
 [apply]
     whitespace = nowarn
@@ -22,7 +21,15 @@
     pager = less -r
 
 [help]
-    autocorrect = 1 #fucking magic!
+    autocorrect = 1
 
 [push]
     default = simple
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+; store user configuration outside repo
+[include]
+    path = ~/.gitconfig-user
