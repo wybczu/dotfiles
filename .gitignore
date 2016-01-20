@@ -1,5 +1,4 @@
 mutt/cache/*
-mutt/profiles/*
-!mutt/profiles/default
 mutt/certificates
 vim/backups
+.netrwhist
