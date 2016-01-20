@@ -1,9 +1,0 @@
-[submodule "vim/bundle/gundo"]
-	path = vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/latex-live-preview"]
-	path = vim/bundle/latex-live-preview
-	url = https://github.com/xuhdev/vim-latex-live-preview.git
-[submodule "vim/bundle/puppet"]
-	path = vim/bundle/puppet
-	url = git://github.com/rodjek/vim-puppet.git
