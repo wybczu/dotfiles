@@ -2,3 +2,4 @@ mutt/cache/*
 mutt/certificates
 vim/backups
 .netrwhist
+vim/bundle/*
