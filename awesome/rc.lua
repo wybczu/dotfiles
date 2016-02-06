@@ -58,13 +58,13 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
+    awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.floating,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
@@ -281,7 +281,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey            }, "x",     function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- Menubar
-    awful.key({ modkey            }, "p",     function() awful.util.spawn("dmenu_run") end)
+    awful.key({ modkey            }, "p",     function() awful.util.spawn("/home/luk/bin/dmenu_run") end)
 )
 
 clientkeys = awful.util.table.join(
@@ -479,6 +479,7 @@ function run_once(prg,arg_string,pname,screen)
 end
 
 run_once("xscreensaver", "-no-splash")
+run_once("xss-lock", "-- xscreensaver-command --lock")
 run_once("xfsettingsd")
 run_once("xfce4-power-manager")
 run_once("xfce4-volumed")
