@@ -12,7 +12,8 @@
     patch = !sh -c 'git format-patch --stdout $0...$0~'
     purr = pull --rebase
     puff = pull --ff-only
-    st = status -sb
+	st = status
+	springcleaning = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
 
 [apply]
     whitespace = nowarn
