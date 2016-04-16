@@ -1,0 +1,235 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    packages:
+      - lightdm
+      - xfce4
+      - xfce4-goodies
+      - xfce4-power-manager
+      - eog
+      - xscreensaver
+      - xss-lock
+      - awesome
+      - awesome-extra
+      - dzen2
+      - xfonts-terminus
+      - ttf-mscorefonts-installer
+      - network-manager
+      - network-manager-gnome
+      - network-manager-pptp
+      - network-manager-pptp-gnome
+      - network-manager-openvpn
+      - network-manager-openvpn-gnome
+      - rxvt-unicode-256color
+      - gnome-keyring
+      - seahorse
+      - keepassx
+      - pavucontrol
+      - zsh
+      - vim-nox
+      - vim-gtk
+      - screen
+      - tmux
+      - links
+      - psmisc
+      - dnsutils
+      - less
+      - lsof
+      - mc
+      - time
+      - p7zip-full
+      - zip
+      - unzip
+      - git
+      - git-svn
+      - git-annex
+      - etckeeper
+      - evince
+      - subversion
+      - tig
+      - rsync
+      - apg
+      - bar
+      - pv
+      - grc
+      - ntp
+      - pm-utils
+      - htop
+      - iotop
+      - gnuplot
+      - graphviz
+      - tree
+      - ncdu
+      - lftp
+      - xtightvncviewer
+      - freerdp-x11
+      - vlc
+      - unrar
+      - tidy
+      - sudo
+      - telnet
+      - imagemagick
+      - rlwrap
+      - virtualbox
+      - virtualbox-dkms
+      - httpie
+      - curl
+      - disper
+      - arandr
+      - suckless-tools
+      - moreutils
+      # networking tools
+      - iftop
+      - mtr
+      - hping3
+      - tcpdump
+      - socat
+      - netcat-traditional
+      - ipcalc
+      - sipcalc
+      - wireshark
+      - openvpn
+      - nmap
+      # webbrowsers
+      - iceweasel
+      - chromium
+      - flashplugin-nonfree
+      # editing
+      - texlive
+      - texlive-bibtex-extra
+      #- texlive-fonts-extra
+      - texlive-lang-polish
+      - texlive-latex-extra
+      - aspell-en
+      - aspell-pl
+      - myspell-pl
+      - wpolish
+      - pandoc
+      - asciidoctor
+      - libreoffice
+      - pdftk
+      # GPG
+      - gnupg
+      - signing-party # for caff
+      # messaging & e-mail
+      - mcabber
+      - irssi
+      - mutt
+      - mutt-patched
+      - notmuch
+      - notmuch-mutt
+      - offlineimap
+      - msmtp
+      - msmtp-mta
+      # firewall
+      - ferm
+      # development tools
+      - autoconf
+      - automake
+      - build-essential
+      - flex
+      - bison
+      - linux-headers-amd64
+      - ipython
+      - java-package
+      - nodejs
+      - openjdk-8-jdk
+      - python
+      - python-dev
+      - python-pip
+      - python-sphinx
+      - python3
+      - python3-dev
+      - ruby
+      - ruby-dev
+      - virtualenv
+      - virtualenvwrapper
+      - debhelper
+      - devscripts
+      - dh-make
+      - pbuilder
+      - quilt
+      - git-buildpackage
+      - cowbuilder
+      - cmake
+      - jq
+      - shellcheck
+      - meld
+      - xmlstarlet
+      # Yubikey
+      - yubikey-personalization
+      - yubikey-personalization-gui
+      # wine
+      - wine
+      - winetricks
+    alternatives:
+      - { name: x-terminal-emulator, path: /usr/bin/urxvt }
+      - { name: editor, path: /usr/bin/vim.nox }
+    ferm_configuration: |
+      domain (ip ip6) {
+          table filter {
+              chain INPUT {
+                  policy DROP;
+                  # connection tracking
+                  mod state state INVALID DROP;
+                  mod state state (ESTABLISHED RELATED) ACCEPT;
+                  # allow local packet
+                  interface lo ACCEPT;
+                  # respond to ping
+                  proto icmp ACCEPT;
+                  # allow IPsec
+                  #proto udp dport 500 ACCEPT;
+                  #proto (esp ah) ACCEPT;
+                  # allow SSH connections
+                  proto tcp dport ssh ACCEPT;
+              }
+              chain OUTPUT {
+                  policy ACCEPT;
+                  # connection tracking
+                  #mod state state INVALID DROP;
+                  mod state state (ESTABLISHED RELATED) ACCEPT;
+              }
+              chain FORWARD {
+                  policy DROP;
+                  # connection tracking
+                  mod state state INVALID DROP;
+                  mod state state (ESTABLISHED RELATED) ACCEPT;
+              }
+          }
+      }
+
+  handlers:
+
+    - name: restart ferm
+      service:
+        name: ferm
+        state: restarted
+
+  tasks:
+
+    - name: install packages
+      apt:
+        name: "{{ item }}"
+        state: installed
+        update_cache: yes
+      with_items: packages
+
+    - name: update alternatives
+      alternatives:
+        name: "{{ item.name }}"
+        path: "{{ item.path }}"
+      with_items: alternatives
+
+    - name: install flash player
+      command: >
+        /usr/sbin/update-flashplugin-nonfree --install
+      creates: /usr/lib/flashplugin-nonfree/libflashplayer.so
+
+    - name: configure ferm
+      copy:
+        dest: /etc/ferm/ferm.conf
+        content: "{{ ferm_configuration }}"
+      notify: restart ferm
+
+# vim: ts=2 sw=2 et
