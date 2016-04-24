@@ -1,0 +1,6 @@
+# .caffrc -- vim:ft=perl:
+# This file is in perl(1) format - see caff(1) for details.
+
+$CONFIG{'owner'} = 'Łukasz Szczęsny';
+$CONFIG{'email'} = 'luk@wybcz.pl';
+$CONFIG{'keyid'} = [ qw{2EB8C2A248AD1541} ];
