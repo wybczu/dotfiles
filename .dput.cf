@@ -1,0 +1,6 @@
+[repo.wybcz.pl]
+fqdn = bender.wybcz.pl
+method = scp
+login = *
+incoming = /srv/repo/debian/mini-dinstall/incoming
+post_upload_command = ssh bender.wybcz.pl mini-dinstall -b -v
