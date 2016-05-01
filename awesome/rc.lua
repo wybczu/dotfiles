@@ -280,6 +280,9 @@ globalkeys = awful.util.table.join(
 	-- Screensaver
     awful.key({ modkey            }, "x",     function () awful.util.spawn("xscreensaver-command -lock") end),
 
+	-- Display switching
+    awful.key({ modkey            }, "d",     function () awful.util.spawn("disper --direction=left --cycle-stages='-e : -c : -S : -s' --cycle") end),
+
     -- Menubar
     awful.key({ modkey            }, "p",     function() awful.util.spawn("/home/luk/bin/dmenu_run") end)
 )
