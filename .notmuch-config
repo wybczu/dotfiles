@@ -1,0 +1,17 @@
+[database]
+path=/home/luk/Mail
+
+[user]
+name=Łukasz Szczęsny
+primary_email=luk@wybcz.pl
+other_email=luk@mimuw.edu.pl;
+
+[new]
+tags=unread;inbox;
+ignore=
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true
