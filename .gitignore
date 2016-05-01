@@ -1,5 +1,6 @@
 mutt/cache/*
 mutt/certificates
+mutt/aliases
 vim/backups
 .netrwhist
 vim/bundle/*

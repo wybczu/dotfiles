@@ -2,12 +2,6 @@
 set realname   = "Lukasz Szczesny"
 set from       = luk@wybcz.pl
 
-set mbox_type  = Maildir
-set mask       = !^\\.[^.]
-set record     = +Sent
-set postponed  = +Drafts
-set trash      = +Trash
-
-alternates     = luk@mimuw.edu.pl
+alternates     luk@mimuw.edu.pl wybczu@gmail.com
 
 # vim: ft=muttrc

@@ -1,8 +1,8 @@
 # -*-muttrc-*-
 #
 # Command formats for gpg.
-# 
-# This version uses gpg-2comp from 
+#
+# This version uses gpg-2comp from
 #   http://70t.de/download/gpg-2comp.tar.gz
 #
 # $Id$
@@ -65,10 +65,10 @@ set pgp_export_command="gpg --no-verbose --export --armor %r"
 set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
 
 # read in the public key ring
-set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r" 
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r"
 
 # read in the secret key ring
-set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r" 
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r"
 
 # fetch keys
 # set pgp_getkeys_command="pkspxycwrap %r"
@@ -88,6 +88,5 @@ set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 set pgp_timeout        = 3600
 set crypt_autosign     = yes
 set crypt_replyencrypt = yes
-set pgp_sign_as        = 48AD1541
 
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"

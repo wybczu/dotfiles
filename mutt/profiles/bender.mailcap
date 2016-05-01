@@ -1,4 +1,3 @@
-text/*; ${HOME}/.mutt/scripts/view-attachment.sh %s
 application/*; ${HOME}/.mutt/scripts/view-attachment.sh %s
 image/*; ${HOME}/.mutt/scripts/view-attachment.sh %s
 audio/*; ${HOME}/.mutt/scripts/view-attachment.sh %s

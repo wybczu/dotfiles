@@ -1,6 +1,14 @@
+set folder       = $HOME/Mail
+set spoolfile    = +INBOX
+set mbox_type    = Maildir
+set mask         = !^\\.[^.]
+set record       = +Sent
+set postponed    = +Drafts
+set trash        = +Trash
+set mail_check   = 60
+set pgp_sign_as  = BD551FBB
+set mailcap_path = /etc/mailcap
 
-set folder     = $HOME/Mail
-set spoolfile  = +INBOX
 
 mailboxes "+INBOX" `\\
 

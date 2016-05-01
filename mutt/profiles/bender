@@ -1,9 +1,10 @@
-
-set sidebar_shortpath = yes
-
 set mailcap_path = $HOME/.mutt/profiles/bender.mailcap
 set folder       = "~/Maildir/"
 set spoolfile    = "~/Maildir/"
+set mask         = !^\\.[^.]
+set record       = +.Sent
+set postponed    = +.Drafts
+set trash        = +.Trash
 
 mailboxes ! + `\\
 

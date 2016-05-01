@@ -5,32 +5,30 @@
 
 # general config
   set alias_file          = ~/.mutt/aliases
-  set certificate_file    = ~/.mutt/certificates 
+  set certificate_file    = ~/.mutt/certificates
   set charset             = utf-8
   set check_new           = yes
   set copy                = yes
-  set editor              = "vim" 
+  set editor              = "vim"
   set envelope_from       = yes
-  set fast_reply 
+  set fast_reply
   set forward_format      = "Fwd: %s"
   set include
   set index_format        ="%4C %Z %{%b %d/%m} | %-15.15L | %s"
   set ispell              = "aspell -e -c"
-  set mailcap_path        = /etc/mailcap 
-  set mail_check          = 2
 unset markers
   set menu_scroll         = no
   set metoo               = yes
-  set move                = no				
+  set move                = no
   set noconfirmappend
   set pager_context       = 5
   set pager_index_lines   = 10
   set pager_stop
-  set print_command       = "muttprint" 
-  set query_command       = "abook --mutt-query '%s'" 
+  set print_command       = "muttprint"
+  set query_command       = "abook --mutt-query '%s'"
   set quit                = ask-yes
   set reverse_alias       = yes
-  set signature           = ~/.signature 
+  set signature           = ~/.signature
   set sort_alias          = alias
   set sort                = threads
   set thread_received
@@ -43,7 +41,7 @@ unset wait_key
   set message_cachedir    = ~/.mutt/cache/bodies
 
 #
-alternative_order text/plain text/html text/enriched 
+alternative_order text/plain text/html text/enriched
 auto_view text/html
 
 # headers
@@ -52,21 +50,23 @@ unignore    From: To: Cc: Bcc: Subject: Date:
 unignore    Reply-to: User-agent:
 hdr_order   From: To: CC: Subject: Date: To: Bcc: User-agent:
 
-my_hdr      X-Operating-System: `uname -a`
+# headers
+my_hdr      X-Clacks-Overhead: GNU Terry Pratchett
 
 # keybinds
-bind    pager   <up>        previous-line
-bind    pager   <down>      next-line
-bind    pager   G           bottom
+bind        pager   <up>        previous-line
+bind        pager   <down>      next-line
+bind        pager   G           bottom
 
 source ~/.mutt/profiles/common
-# machine specific configuration
-source `FILE=$HOME/.mutt/profiles/$( hostname -s); [ -f $FILE ] || FILE=/dev/null; echo $FILE`
-source $alias_file
 source ~/.mutt/colors
 source ~/.mutt/gpg
 source ~/.mutt/lists
 source ~/.mutt/macros
+source $alias_file
 source `FILE=$HOME/.mutt/sidebar; mutt -v | grep -Fq sidebar || FILE=/dev/null; echo $FILE`
+
+# machine specific configuration
+source `FILE=$HOME/.mutt/profiles/$( hostname -s); [ -f $FILE ] || FILE=/dev/null; echo $FILE`
 
 # vim: ft=muttrc
