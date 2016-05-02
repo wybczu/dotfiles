@@ -16,5 +16,5 @@ type             = IMAP
 remotehost       = bender.wybcz.pl
 remoteuser       = luk
 tls              = yes
-remotepasseval   = keyring.get_password('offlineimap', 'luk@wybcz.pl')
+remotepasseval   = keyring.get_password('wybcz-mail', 'luk@wybcz.pl')
 cert_fingerprint = c8e22e92f3ea25c11a6eab721518c119ad4ead6b 
