@@ -1,36 +1,54 @@
 
 [color]
-    ui = auto
+	ui = auto
+
+[color "status"]
+	untracked = cyan
 
 ; based on https://github.com/jakubnabrdalik/gitkurwa
+; and https://bitbucket.org/durdn/cfg/src/c4ea8605e9ffd5f6cced30af31039c2e272429fb/.gitconfig
 [alias]
-    hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
-    llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
-    showorigin = !sh -c "isHash=true; for i in `git ls-remote -h origin`; do [ ! -z $isHash ] && echo \" $i\" || printf \"%-8s %8s %-8s%-3s %-10s %-20s\" `git show -s --pretty=format:\"%C(yellow)%h %Cred%ad %Cblue%an\" --date=relative $i` ; [ ! -z $isHash ] && isHash=\"\" || isHash=true ; done"
-    tag-with-date = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
-    unstage = reset HEAD --
-    patch = !sh -c 'git format-patch --stdout $0...$0~'
-    purr = pull --rebase
-    puff = pull --ff-only
-	st = status
+	ci = commit
+	co = checkout
+	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
+	llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+	showorigin = !sh -c "isHash=true; for i in `git ls-remote -h origin`; do [ ! -z $isHash ] && echo \" $i\" || printf \"%-8s %8s %-8s%-3s %-10s %-20s\" `git show -s --pretty=format:\"%C(yellow)%h %Cred%ad %Cblue%an\" --date=relative $i` ; [ ! -z $isHash ] && isHash=\"\" || isHash=true ; done"
+	tag-with-date = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
+	unstage = reset HEAD --
+	patch = !sh -c 'git format-patch --stdout $0...$0~'
+	purr = pull --rebase
+	puff = pull --ff-only
+	st = status -sb
 	springcleaning = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
+	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lc  = "!f() { git ll "$1"^.."$1"; }; f"
 
 [apply]
-    whitespace = nowarn
+	whitespace = nowarn
 
 [core]
-    pager = less -r
+	pager = less -r
 
 [help]
-    autocorrect = 1
+	autocorrect = 1
 
 [push]
-    default = simple
+	default = current
+
+[pull]
+	default = current
+
+[diff]
+	mnemonicprefix = true
 
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+	tool = vimdiff
+	conflictstyle = diff3
+
+[rebase]
+	autosquash = true
 
 ; store user configuration outside repo
 [include]
-    path = ~/.gitconfig-user
+	path = ~/.gitconfig-user
