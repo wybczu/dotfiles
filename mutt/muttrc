@@ -35,6 +35,7 @@ unset markers
   set tilde
   set tmpdir              = ~/tmp
 unset wait_key
+  set mail_check_stats
 
 # cache
   set header_cache        = ~/.mutt/cache/headers
@@ -47,7 +48,7 @@ auto_view text/html
 # headers
 ignore      *
 unignore    From: To: Cc: Bcc: Subject: Date:
-unignore    Reply-to: User-agent:
+unignore    Reply-to: User-agent: X-Clacks-Overhead:
 hdr_order   From: To: CC: Subject: Date: To: Bcc: User-agent:
 
 # headers
