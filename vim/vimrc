@@ -8,27 +8,29 @@ set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Manage Vundle with Vundle
-Bundle 'VundleVim/Vundle.vim'
+Plugin'VundleVim/Vundle.vim'
 
 " Plugins
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/indentpython.vim'
-Bundle 'edsono/vim-matchit'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'msanders/snipmate.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'rodjek/vim-puppet'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'edsono/vim-matchit'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'honza/vim-snippets'
+Plugin 'godlygeek/tabular'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/SyntaxRange'
 
 " Color schemas
-Bundle 'brafales/vim-desert256'
+Plugin 'brafales/vim-desert256'
 
 set t_Co=256
 set background=dark
@@ -64,10 +66,15 @@ set backup
 
 au BufNewFile *.py   so ~/.vim/templates/tpl.py
 au BufNewFile *.php  so ~/.vim/templates/tpl.php
+
 au BufRead mutt-* setlocal spell spelllang=pl
 au BufRead *.tex setlocal spell spelllang=pl
 au BufRead *.twig   set ft=html
 au BufRead *.txt set tw=78
+
+au FileType puppet setlocal isk+=:
+au FileType puppet nnoremap <c-]> :exe "tag " . substitute(expand("<cword>"), "^::", "", "")<CR>  
+au FileType puppet nnoremap <c-w><c-]> :tab split<CR>:exe "tag " . substitute(expand("<cword>"), "^::", "", "")<CR>
 
 " jump to the last position when  reopening a file
 if has("autocmd")
@@ -82,15 +89,19 @@ map <C-H> :tabp<CR>
 let NERDTreeKeepTreeInNewTab=1
 
 nmap <leader>t :NERDTreeToggle<CR>
-nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tabs = 0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
 let g:ctrlp_extensions = ['tag']
 
+let g:go_fmt_command = "goimports"
+
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
