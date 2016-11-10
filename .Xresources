@@ -9,7 +9,7 @@ URxvt.saveLines: 9000
 URxvt.perl-ext-common: default,matcher,searchable-scrollback<M-s>,readline,font-size
 URxvt.keysym.C-S-Up: perl:font-size:increase
 URxvt.keysym.C-S-Down: perl:font-size:decrease
-URxvt.urlLauncher: iceweasel
+URxvt.urlLauncher: /usr/bin/xdg-open
 URxvt.underlineURLs: true
 URxvt.keysym.M-Delete: perl:matcher:list
 
@@ -39,3 +39,7 @@ URxvt.color12: #729FCF
 URxvt.color13: #AD7FA8
 URxvt.color14: #34E2E2
 URxvt.color15: #EEEEEC
+
+URxvt.buffered: false
+
+URxvt.cutchars: "`\"'&()*,;<=>?@[]^{|}│─:"
