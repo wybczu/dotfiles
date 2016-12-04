@@ -12,9 +12,10 @@ type             = Maildir
 localfolders     = ~/Mail
 
 [Repository wybcz-Remote]
+maxconnections   =  4
 type             = IMAP
-remotehost       = bender.wybcz.pl
-remoteuser       = luk
+remotehost       = imap.fastmail.com
+remoteuser       = luk@wybcz.pl
 tls              = yes
 remotepasseval   = keyring.get_password('wybcz-mail', 'luk@wybcz.pl')
-cert_fingerprint = c8e22e92f3ea25c11a6eab721518c119ad4ead6b 
+cert_fingerprint = 995d415e2a1000e0574efb30fd01b16709d218ed 
