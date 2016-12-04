@@ -26,6 +26,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'vim-scripts/bats.vim'
 
 " Color schemas
 Bundle 'brafales/vim-desert256'
@@ -64,10 +65,15 @@ set backup
 
 au BufNewFile *.py   so ~/.vim/templates/tpl.py
 au BufNewFile *.php  so ~/.vim/templates/tpl.php
+
 au BufRead mutt-* setlocal spell spelllang=pl
 au BufRead *.tex setlocal spell spelllang=pl
 au BufRead *.twig   set ft=html
 au BufRead *.txt set tw=78
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>i <Plug>(go-info)
 
 " jump to the last position when  reopening a file
 if has("autocmd")
@@ -84,7 +90,7 @@ let NERDTreeKeepTreeInNewTab=1
 nmap <leader>t :NERDTreeToggle<CR>
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tabs = 0
@@ -94,3 +100,4 @@ let g:airline_right_sep = ''
 
 let g:ctrlp_extensions = ['tag']
 
+let g:go_fmt_command = "goimports"
