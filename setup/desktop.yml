@@ -24,8 +24,10 @@
       - rxvt-unicode-256color
       - gnome-keyring
       - seahorse
+      - libsecret-tools
       - keepassx
       - pavucontrol
+      - goldendict
       - zsh
       - vim-nox
       - vim-gtk
@@ -66,6 +68,7 @@
       - xtightvncviewer
       - freerdp-x11
       - vlc
+      - qnapi
       - unrar
       - tidy
       - sudo
@@ -74,12 +77,18 @@
       - rlwrap
       - virtualbox
       - virtualbox-dkms
+      - virtualbox-qt
       - httpie
       - curl
       - disper
       - arandr
       - suckless-tools
       - moreutils
+      - python-keyring
+      - strace
+      - ltrace
+      - stow
+      - silversearcher-ag
       # networking tools
       - iftop
       - mtr
@@ -92,6 +101,7 @@
       - wireshark
       - openvpn
       - nmap
+      - rtorrent
       # webbrowsers
       - iceweasel
       - chromium
@@ -110,6 +120,7 @@
       - asciidoctor
       - libreoffice
       - pdftk
+      - rubber
       # GPG
       - gnupg
       - signing-party # for caff
@@ -118,6 +129,7 @@
       - irssi
       - mutt
       - mutt-patched
+      - urlview
       - notmuch
       - notmuch-mutt
       - offlineimap
@@ -158,6 +170,7 @@
       - shellcheck
       - meld
       - xmlstarlet
+      - manpages-dev
       # Yubikey
       - yubikey-personalization
       - yubikey-personalization-gui
@@ -199,6 +212,9 @@
               }
           }
       }
+    apt_conf: |
+      APT::Install-Recommends "0";
+      APT::Install-Suggests "0";
 
   handlers:
 
@@ -209,18 +225,23 @@
 
   tasks:
 
+    - name: configure apt
+      copy:
+        dest: /etc/apt/apt.conf.d/02norecommends
+        content: "{{ apt_conf }}"
+
     - name: install packages
       apt:
         name: "{{ item }}"
         state: installed
         update_cache: yes
-      with_items: packages
+      with_items: "{{ packages }}"
 
     - name: update alternatives
       alternatives:
         name: "{{ item.name }}"
         path: "{{ item.path }}"
-      with_items: alternatives
+      with_items: "{{ alternatives }}"
 
     - name: install flash player
       command: >
