@@ -284,7 +284,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey            }, "d",     function () awful.util.spawn("disper --direction=left --cycle-stages='-e : -c : -S : -s' --cycle") end),
 
     -- Menubar
-    awful.key({ modkey            }, "p",     function() awful.util.spawn("/home/luk/bin/dmenu_run") end)
+    awful.key({ modkey            }, "p",     function() awful.util.spawn("rofi -show run") end)
 )
 
 clientkeys = awful.util.table.join(
