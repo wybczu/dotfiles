@@ -13,6 +13,8 @@
       - awesome
       - awesome-extra
       - dzen2
+      - rofi
+      - surfraw
       - xfonts-terminus
       - ttf-mscorefonts-installer
       - network-manager
@@ -26,6 +28,7 @@
       - seahorse
       - libsecret-tools
       - keepassx
+      - pass
       - pavucontrol
       - goldendict
       - zsh
@@ -48,6 +51,7 @@
       - git-annex
       - etckeeper
       - evince
+      - zathura
       - subversion
       - tig
       - rsync
@@ -57,6 +61,7 @@
       - grc
       - ntp
       - pm-utils
+      - num-utils
       - htop
       - iotop
       - gnuplot
@@ -171,6 +176,8 @@
       - meld
       - xmlstarlet
       - manpages-dev
+      - exuberant-ctags
+      - cscope
       # Yubikey
       - yubikey-personalization
       - yubikey-personalization-gui
