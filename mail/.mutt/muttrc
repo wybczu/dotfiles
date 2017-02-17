@@ -3,6 +3,7 @@
 # - Main configuration file
 # ---------------------------------------------------------------------------
 
+
 # general config
   set alias_file          = ~/.mutt/aliases
   set certificate_file    = ~/.mutt/certificates
@@ -36,6 +37,7 @@ unset markers
   set tmpdir              = ~/tmp
 unset wait_key
   set mail_check_stats
+  set strict_threads
 
 # cache
   set header_cache        = ~/.mutt/cache/headers
