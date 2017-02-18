@@ -6,7 +6,7 @@ set record       = +Sent
 set postponed    = +Drafts
 set trash        = +Trash
 set mail_check   = 60
-set pgp_sign_as  = BD551FBB
+set pgp_sign_as  = 0x25AA83DFBD551FBB!
 set mailcap_path = /etc/mailcap
 
 

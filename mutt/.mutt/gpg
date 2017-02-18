@@ -32,6 +32,8 @@
 
 set crypt_use_gpgme=no
 
+set pgp_use_gpg_agent=yes
+
 # decode application/pgp
 set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
 
