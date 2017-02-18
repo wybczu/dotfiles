@@ -108,7 +108,7 @@
       - nmap
       - rtorrent
       # webbrowsers
-      - iceweasel
+      - firefox
       - chromium
       - flashplugin-nonfree
       # editing
@@ -187,7 +187,11 @@
       - winetricks
     alternatives:
       - { name: x-terminal-emulator, path: /usr/bin/urxvt }
+      - { name: x-www-browser, path: /usr/bin/firefox }
       - { name: editor, path: /usr/bin/vim.nox }
+    default_applications:
+      - { mimetype: x-scheme-handler/http, application: firefox.desktop }
+      - { mimetype: x-scheme-handler/https, application: firefox.desktop }
     ferm_configuration: |
       domain (ip ip6) {
           table filter {
@@ -200,16 +204,11 @@
                   interface lo ACCEPT;
                   # respond to ping
                   proto icmp ACCEPT;
-                  # allow IPsec
-                  #proto udp dport 500 ACCEPT;
-                  #proto (esp ah) ACCEPT;
-                  # allow SSH connections
-                  proto tcp dport ssh ACCEPT;
               }
               chain OUTPUT {
                   policy ACCEPT;
                   # connection tracking
-                  #mod state state INVALID DROP;
+                  mod state state INVALID DROP;
                   mod state state (ESTABLISHED RELATED) ACCEPT;
               }
               chain FORWARD {
@@ -225,24 +224,26 @@
       APT::Install-Suggests "0";
 
   handlers:
-
     - name: restart ferm
       service:
         name: ferm
         state: restarted
 
   tasks:
-
     - name: configure apt
       copy:
         dest: /etc/apt/apt.conf.d/02norecommends
         content: "{{ apt_conf }}"
 
+    - name: update apt cache
+      apt:
+        update_cache: yes
+      changed_when: false
+
     - name: install packages
       apt:
         name: "{{ item }}"
         state: installed
-        update_cache: yes
       with_items: "{{ packages }}"
 
     - name: update alternatives
@@ -251,10 +252,22 @@
         path: "{{ item.path }}"
       with_items: "{{ alternatives }}"
 
-    - name: install flash player
+    - name: get a list default applications
       command: >
-        /usr/sbin/update-flashplugin-nonfree --install
-      creates: /usr/lib/flashplugin-nonfree/libflashplayer.so
+        /usr/bin/xdg-mime query default {{ item.mimetype }}
+      with_items: "{{ default_applications }}"
+      register: default_applications__list
+      changed_when: false
+      become_user: "{{ lookup('env', 'USER') }}"
+
+    - name: set default applications
+      command: >
+        /usr/bin/xdg-mime default {{ item.0.application }} {{ item.0.mimetype }}
+      with_together: 
+        - "{{ default_applications }}"
+        - "{{ default_applications__list.results }}" 
+      when: "item.0.application != item.1.stdout"
+      become_user: "{{ lookup('env', 'USER') }}"
 
     - name: configure ferm
       copy:
