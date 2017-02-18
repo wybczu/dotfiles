@@ -3,7 +3,6 @@
 # - Main configuration file
 # ---------------------------------------------------------------------------
 
-
 # general config
   set alias_file          = ~/.mutt/aliases
   set certificate_file    = ~/.mutt/certificates
@@ -26,7 +25,7 @@ unset markers
   set pager_index_lines   = 10
   set pager_stop
   set print_command       = "muttprint"
-  set query_command       = "abook --mutt-query '%s'"
+  set query_command       = "khard email --parsable '%s'"
   set quit                = ask-yes
   set reverse_alias       = yes
   set signature           = ~/.signature

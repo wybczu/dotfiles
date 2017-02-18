@@ -26,4 +26,8 @@ macro index s \
 	"<shell-escape>offlineimap -f INBOX<enter>" \
 	"run offlineimap to sync inbox"
 
+macro index,pager A \
+	"<pipe-message>khard add-email<return>" \
+	"add the sender email address to khard"
+
 # vim: ft=muttrc
