@@ -42,4 +42,4 @@ URxvt.color15: #EEEEEC
 
 URxvt.buffered: false
 
-URxvt.cutchars: "`\"'&()*,;<=>?@[]^{|}│─:"
+URxvt.cutchars: "`\"'&()*,;<=>?@[]^{|}│─"
