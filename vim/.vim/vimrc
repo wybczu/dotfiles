@@ -3,6 +3,7 @@
 "
 
 " Vundle setup
+
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -37,14 +38,16 @@ Plugin 'majutsushi/tagbar'
 " Color schemas
 Plugin 'brafales/vim-desert256'
 
-set t_Co=256
-set background=dark
-colorscheme desert256
-
 syntax on
 filetype plugin on
 filetype plugin indent on
 
+" Color scheme
+set t_Co=256
+set background=dark
+colorscheme desert256
+
+set nocompatible
 set modeline
 set backspace=2
 set tabstop=4
@@ -59,68 +62,108 @@ set ignorecase
 set smartcase
 set autoindent
 set title
-set foldmethod=indent
-set foldlevel=99
 set laststatus=2
+set backspace=indent,eol,start
 
 set encoding=utf8
-set spelllang=pl
+set spelllang=en,pl
 
 set backupdir=~/.vim/backups
 set backup
 
-au BufNewFile *.py   so ~/.vim/templates/tpl.py
-au BufNewFile *.php  so ~/.vim/templates/tpl.php
+" Filetype settings
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown setlocal textwidth=78
 
-au BufRead mutt-* setlocal spell spelllang=pl
-au BufRead *.tex setlocal spell spelllang=pl
-au BufRead *.twig   set ft=html
-au BufRead *.txt set tw=78
+autocmd FileType rst setlocal spell
+autocmd FileType rst setlocal textwidth=78
 
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType txt setlocal spell
+autocmd FileType txt setlocal textwidth=78
 
-au FileType puppet setlocal isk+=:
-au FileType puppet nnoremap <c-]> :exe "tag " . substitute(expand("<cword>"), "^::", "", "")<CR>
-au FileType puppet nnoremap <c-w><c-]> :tab split<CR>:exe "tag " . substitute(expand("<cword>"), "^::", "", "")<CR>
+autocmd FileType tex setlocal spell
+autocmd FileType tex setlocal textwidth=78
 
-" jump to the last position when  reopening a file
-if has("autocmd")
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+autocmd FileType vimwiki setlocal spell
 
+autocmd FileType yaml setlocal tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2
+autocmd FileType yaml setlocal softtabstop=2
+
+autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit setlocal textwidth=78
+
+autocmd FileType mail setlocal spell
+autocmd FileType mail setlocal textwidth=78
+
+autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
+autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+
+autocmd FileType puppet setlocal isk+=:
+autocmd FileType puppet nnoremap <c-]> :exe "tag " . substitute(expand("<cword>"), "^::", "", "")<CR>
+autocmd FileType puppet nnoremap <c-w><c-]> :tab split<CR>:exe "tag " . substitute(expand("<cword>"), "^::", "", "")<CR>
+
+" Jump to the last position when  reopening a file
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Mappings
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
 
-nmap <leader>t :NERDTreeToggle<CR>
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+nmap <Leader>p "+p
+nmap <Leader>P "+P
 
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
+" Plugins configuration
+
+" scrooloose/nerdcommenter
+nmap <leader>t :NERDTreeToggle<CR>
 let NERDTreeKeepTreeInNewTab=1
 
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
+" vim-airline/vim-airline
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.readonly = 'RO'
+let g:airline_symbols.crypt = 'CRYPT'
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.whitespace = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tabs = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
 
+" kien/ctrlp.vim
 let g:ctrlp_extensions = ['tag']
 
+" fatih/vim-go
 let g:go_fmt_command = "goimports"
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+" mileszs/ack.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" vimwiki
-let g:vimwiki_list = [{'path': '~/priv/notes/', 'syntax': 'markdown', 'ext': '.md'}]
+" vimwiki/vimwiki
+let g:vimwiki_list = [{
+	\ 'path': '~/notes/',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+	\ 'custom_wiki2html': '~/notes/scripts/wiki2html.sh'
+\}]
 
-" tagbar
+" majutsushi/tagbar
 let g:tagbar_type_puppet = {
 	\ 'ctagstype': 'puppet',
 	\ 'kinds': [
