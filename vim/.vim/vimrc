@@ -86,6 +86,9 @@ autocmd FileType tex setlocal textwidth=78
 
 autocmd FileType vimwiki setlocal spell
 
+autocmd FileType adoc setlocal spell
+autocmd FileType adoc setlocal textwidth=78
+
 autocmd FileType yaml setlocal tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2
 autocmd FileType yaml setlocal softtabstop=2
