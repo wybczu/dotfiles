@@ -12,6 +12,7 @@ call vundle#rc()
 Plugin'VundleVim/Vundle.vim'
 
 " Plugins
+Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
@@ -20,6 +21,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'edsono/vim-matchit'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
@@ -178,3 +180,16 @@ let g:tagbar_type_puppet = {
 		\'f:default'
 	\]
 \}
+
+" SirVer/ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Valloric/YouCompleteMe
+" https://github.com/SirVer/ultisnips/issues/512#issuecomment-111733631
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
