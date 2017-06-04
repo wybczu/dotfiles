@@ -278,7 +278,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
 	-- Screensaver
-    awful.key({ modkey            }, "x",     function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey            }, "x",     function () awful.util.spawn("i3lock -c 000000") end),
 
 	-- Display switching
     awful.key({ modkey            }, "d",     function () awful.util.spawn("disper --direction=left --cycle-stages='-e : -c : -S : -s' --cycle") end),
@@ -482,7 +482,7 @@ function run_once(prg,arg_string,pname,screen)
 end
 
 run_once("xscreensaver", "-no-splash")
-run_once("xss-lock", "-- xscreensaver-command --lock")
+run_once("xss-lock", "-- i3lock -c 000000")
 run_once("xfsettingsd")
 run_once("xfce4-power-manager")
 run_once("xfce4-volumed")

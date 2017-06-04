@@ -8,7 +8,7 @@
       - xfce4-goodies
       - xfce4-power-manager
       - eog
-      - xscreensaver
+      - i3lock
       - xss-lock
       - awesome
       - awesome-extra
@@ -80,9 +80,6 @@
       - telnet
       - imagemagick
       - rlwrap
-      - virtualbox
-      - virtualbox-dkms
-      - virtualbox-qt
       - httpie
       - curl
       - disper
@@ -108,7 +105,6 @@
       - nmap
       - rtorrent
       # webbrowsers
-      - firefox
       - chromium
       - flashplugin-nonfree
       # editing
