@@ -9,4 +9,4 @@ fi
 
 export ANSIBLE_ERROR_ON_UNDEFINED_VARS=True
 
-ansible-playbook -i "localhost," -v -b desktop.yml
+ansible-playbook -i "localhost," -v desktop.yml "$@"

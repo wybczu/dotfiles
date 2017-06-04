@@ -3,188 +3,196 @@
   connection: local
   vars:
     packages:
-      - lightdm
-      - xfce4
-      - xfce4-goodies
-      - xfce4-power-manager
-      - eog
-      - i3lock
-      - xss-lock
-      - awesome
-      - awesome-extra
-      - dzen2
-      - rofi
-      - surfraw
-      - xfonts-terminus
-      - ttf-mscorefonts-installer
-      - network-manager
-      - network-manager-gnome
-      - network-manager-pptp
-      - network-manager-pptp-gnome
-      - network-manager-openvpn
-      - network-manager-openvpn-gnome
-      - rxvt-unicode-256color
-      - gnome-keyring
-      - seahorse
-      - libsecret-tools
-      - keepassx
-      - pass
-      - pavucontrol
-      - goldendict
-      - zsh
-      - vim-nox
-      - vim-gtk
-      - screen
-      - tmux
-      - links
-      - psmisc
-      - dnsutils
-      - less
-      - lsof
-      - mc
-      - time
-      - p7zip-full
-      - zip
-      - unzip
-      - git
-      - git-svn
-      - git-annex
-      - etckeeper
-      - evince
-      - zathura
-      - subversion
-      - tig
-      - rsync
-      - apg
-      - bar
-      - pv
-      - grc
-      - ntp
-      - pm-utils
-      - num-utils
-      - htop
-      - iotop
-      - gnuplot
-      - graphviz
-      - qalc
-      - tree
-      - ncdu
-      - lftp
-      - xtightvncviewer
-      - freerdp-x11
-      - vlc
-      - qnapi
-      - unrar
-      - tidy
-      - sudo
-      - telnet
-      - imagemagick
-      - rlwrap
-      - httpie
-      - curl
-      - disper
-      - arandr
-      - suckless-tools
-      - moreutils
-      - python-keyring
-      - strace
-      - ltrace
-      - stow
-      - silversearcher-ag
+      - name: lightdm
+      - name: xfce4
+      - name: xfce4-goodies
+      - name: xfce4-power-manager
+      - name: eog
+      - name: i3lock
+      - name: xss-lock
+      - name: awesome
+      - name: awesome-extra
+      - name: dzen2
+      - name: rofi
+      - name: surfraw
+      - name: xfonts-terminus
+      - name: ttf-mscorefonts-installer
+      - name: network-manager
+      - name: network-manager-gnome
+      - name: network-manager-pptp
+      - name: network-manager-pptp-gnome
+      - name: network-manager-openvpn
+      - name: network-manager-openvpn-gnome
+      - name: rxvt-unicode-256color
+      - name: gnome-keyring
+      - name: seahorse
+      - name: libsecret-tools
+      - name: keepassx
+      - name: pass
+      - name: pavucontrol
+      - name: goldendict
+      - name: zsh
+      - name: vim-nox
+      - name: vim-gtk
+      - name: screen
+      - name: tmux
+      - name: links
+      - name: psmisc
+      - name: dnsutils
+      - name: less
+      - name: lsof
+      - name: mc
+      - name: time
+      - name: p7zip-full
+      - name: zip
+      - name: unzip
+      - name: git
+      - name: git-svn
+      - name: git-annex
+      - name: etckeeper
+      - name: evince
+      - name: zathura
+      - name: subversion
+      - name: tig
+      - name: rsync
+      - name: apg
+      - name: bar
+      - name: pv
+      - name: grc
+      - name: ntp
+      - name: pm-utils
+      - name: num-utils
+      - name: htop
+      - name: iotop
+      - name: gnuplot
+      - name: graphviz
+      - name: qalc
+      - name: tree
+      - name: ncdu
+      - name: lftp
+      - name: xtightvncviewer
+      - name: freerdp-x11
+      - name: vlc
+      - name: qnapi
+      - name: unrar
+      - name: tidy
+      - name: sudo
+      - name: telnet
+      - name: imagemagick
+      - name: rlwrap
+      - name: httpie
+      - name: curl
+      - name: disper
+      - name: arandr
+      - name: suckless-tools
+      - name: moreutils
+      - name: python-keyring
+      - name: strace
+      - name: ltrace
+      - name: stow
+      - name: silversearcher-ag
       # networking tools
-      - iftop
-      - mtr
-      - hping3
-      - tcpdump
-      - socat
-      - netcat-traditional
-      - ipcalc
-      - sipcalc
-      - wireshark
-      - openvpn
-      - nmap
-      - rtorrent
+      - name: iftop
+      - name: mtr
+      - name: hping3
+      - name: tcpdump
+      - name: socat
+      - name: netcat-traditional
+      - name: ipcalc
+      - name: sipcalc
+      - name: wireshark
+      - name: openvpn
+      - name: nmap
+      - name: rtorrent
       # webbrowsers
-      - chromium
-      - flashplugin-nonfree
+      - name: firefox
+        release: experimental
+      - name: chromium
+      - name: flashplugin-nonfree
       # editing
-      - texlive
-      - texlive-bibtex-extra
-      #- texlive-fonts-extra
-      - texlive-lang-polish
-      - texlive-latex-extra
-      - aspell-en
-      - aspell-pl
-      - myspell-pl
-      - wpolish
-      - pandoc
-      - asciidoctor
-      - libreoffice
-      - pdftk
-      - rubber
+      - name: texlive
+      - name: texlive-bibtex-extra
+      - name: texlive-fonts-extra
+      - name: texlive-lang-polish
+      - name: texlive-latex-extra
+      - name: aspell-en
+      - name: aspell-pl
+      - name: myspell-pl
+      - name: wpolish
+      - name: pandoc
+      - name: asciidoctor
+      - name: libreoffice
+      - name: pdftk
+      - name: rubber
       # GPG
-      - gnupg
-      - signing-party # for caff
+      - name: gnupg
+      - name: signing-party # for caff
       # messaging & e-mail
-      - mcabber
-      - irssi
-      - mutt
-      - khard
-      - khal
-      - urlview
-      - notmuch
-      - notmuch-mutt
-      - offlineimap
-      - msmtp
-      - msmtp-mta
+      - name: mcabber
+      - name: irssi
+      - name: mutt
+        release: unstable
+      - name: khard
+      - name: khal
+      - name: urlview
+      - name: notmuch
+      - name: notmuch-mutt
+      - name: offlineimap
+      - name: msmtp
+      - name: msmtp-mta
       # firewall
-      - ferm
+      - name: ferm
       # development tools
-      - autoconf
-      - automake
-      - build-essential
-      - flex
-      - bison
-      - linux-headers-amd64
-      - ipython
-      - java-package
-      - nodejs
-      - openjdk-8-jdk
-      - python
-      - python-dev
-      - python-pip
-      - python-sphinx
-      - python3
-      - python3-dev
-      - ruby
-      - ruby-dev
-      - virtualenv
-      - virtualenvwrapper
-      - debhelper
-      - devscripts
-      - dh-make
-      - pbuilder
-      - quilt
-      - git-buildpackage
-      - cowbuilder
-      - cmake
-      - jq
-      - shellcheck
-      - meld
-      - xmlstarlet
-      - manpages-dev
-      - exuberant-ctags
-      - cscope
+      - name: autoconf
+      - name: automake
+      - name: build-essential
+      - name: flex
+      - name: bison
+      - name: linux-headers-amd64
+      - name: ipython
+      - name: java-package
+      - name: nodejs
+      - name: openjdk-8-jdk
+      - name: python
+      - name: python-dev
+      - name: python-pip
+      - name: python-sphinx
+      - name: python3
+      - name: python3-dev
+      - name: ruby
+      - name: ruby-dev
+      - name: virtualenv
+      - name: virtualenvwrapper
+      - name: debhelper
+      - name: devscripts
+      - name: dh-make
+      - name: pbuilder
+      - name: quilt
+      - name: git-buildpackage
+      - name: cowbuilder
+      - name: cmake
+      - name: jq
+      - name: shellcheck
+      - name: meld
+      - name: xmlstarlet
+      - name: manpages-dev
+      - name: exuberant-ctags
+      - name: cscope
       # Yubikey
-      - yubikey-personalization
-      - yubikey-personalization-gui
+      - name: yubikey-personalization
+      - name: yubikey-personalization-gui
       # wine
-      - wine
-      - winetricks
+      - name: wine
+      - name: winetricks
+      # 3rd party
+      - name: spotify-client
     alternatives:
-      - { name: x-terminal-emulator, path: /usr/bin/urxvt }
-      - { name: x-www-browser, path: /usr/bin/firefox }
-      - { name: editor, path: /usr/bin/vim.nox }
+      - name: x-terminal-emulator
+        path: /usr/bin/urxvt
+      - name: x-www-browser
+        path: /usr/bin/firefox
+      - name: editor
+        path: /usr/bin/vim.nox
     default_applications:
       - { mimetype: x-scheme-handler/http, application: firefox.desktop }
       - { mimetype: x-scheme-handler/https, application: firefox.desktop }
@@ -218,35 +226,78 @@
     apt_conf: |
       APT::Install-Recommends "0";
       APT::Install-Suggests "0";
+    apt_keys:
+      - id: BBEBDCB318AD50EC6865090613B00F1FD2C19886 # spotify
+        keyserver: keyserver.ubuntu.com
+    apt_repos:
+      - "deb http://http.debian.net/debian experimental main non-free contrib"
+      - "deb http://http.debian.net/debian unstable main non-free contrib"
+      - "deb http://repository.spotify.com stable non-free"
 
   handlers:
     - name: restart ferm
       service:
         name: ferm
         state: restarted
+      become: true
 
   tasks:
     - name: configure apt
       copy:
         dest: /etc/apt/apt.conf.d/02norecommends
         content: "{{ apt_conf }}"
+      become: true
+      tags: ['configuration::apt', 'apt::packages']
+
+    - name: add additional apt keys
+      apt_key:
+        id: "{{ item.id }}"
+        keyserver: "{{ item.keyserver }}"
+        state: present
+      with_items: "{{ apt_keys }}"
+      become: true
+      tags: ['configuration::apt', 'apt::packages']
+
+    - name: add additional repositories
+      apt_repository:
+        repo: "{{ item }}"
+        state: present
+      with_items: "{{ apt_repos }}"
+      become: true
+      tags: ['configuration::apt', 'apt::packages']
 
     - name: update apt cache
       apt:
         update_cache: yes
       changed_when: false
+      become: true
+      tags: ['apt::packages']
 
-    - name: install packages
+    - name: install basic packages
       apt:
-        name: "{{ item }}"
+        name: "{{ item.name }}"
         state: installed
+        default_release: "{{ item.release | default() }}"
       with_items: "{{ packages }}"
+      become: true
+      tags: ['apt::packages']
 
     - name: update alternatives
       alternatives:
         name: "{{ item.name }}"
         path: "{{ item.path }}"
       with_items: "{{ alternatives }}"
+      become: true
+      tags: ['configuration::defaults']
+
+    - name: create basic directories in user's home
+      file:
+        name: "{{ lookup('env', 'HOME') }}/{{ item }}"
+        state: directory
+      with_items:
+        - bin/
+        - .vim/backups # vim backups
+        - .local/share/applications/ # stores mimeapps.list
 
     - name: get a list default applications
       command: >
@@ -254,21 +305,35 @@
       with_items: "{{ default_applications }}"
       register: default_applications__list
       changed_when: false
-      become_user: "{{ lookup('env', 'USER') }}"
+      tags: ['configuration::defaults']
 
     - name: set default applications
       command: >
         /usr/bin/xdg-mime default {{ item.0.application }} {{ item.0.mimetype }}
-      with_together: 
+      with_together:
         - "{{ default_applications }}"
-        - "{{ default_applications__list.results }}" 
+        - "{{ default_applications__list.results }}"
       when: "item.0.application != item.1.stdout"
-      become_user: "{{ lookup('env', 'USER') }}"
+      tags: ['configuration::defaults']
+
+    - name: install Vim Vundle plugin
+      git:
+        repo: https://github.com/VundleVim/Vundle.vim.git
+        dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/Vundle.vim"
+      tags: ['configuration::vim']
+
+    - name: install oh-my-zsh
+      git:
+        repo: git://github.com/robbyrussell/oh-my-zsh.git
+        dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
+      tags: ['configuration::zsh']
 
     - name: configure ferm
       copy:
         dest: /etc/ferm/ferm.conf
         content: "{{ ferm_configuration }}"
       notify: restart ferm
+      become: true
+      tags: ['configuration::firewall']
 
 # vim: ts=2 sw=2 et
