@@ -15,7 +15,7 @@ fileext        = ".vcf"
 
 [storage contacts_remote]
 type           = "carddav"
-url            = "https://carddav.messagingengine.com/"
+url            = "https://carddav.fastmail.com/"
 username       = "luk@wybcz.pl"
 password.fetch = ["command", "keyring", "get", "wybcz-mail", "luk@wybcz.pl"]
 
@@ -32,7 +32,7 @@ fileext        = ".ics"
 
 [storage calendars_remote]
 type           = "caldav"
-url            = "https://caldav.messagingengine.com/"
+url            = "https://caldav.fastmail.com/"
 username       = "luk@wybcz.pl"
 password.fetch = ["command", "keyring", "get", "wybcz-mail", "luk@wybcz.pl"]
 
