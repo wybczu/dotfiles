@@ -481,7 +481,6 @@ function run_once(prg,arg_string,pname,screen)
     end
 end
 
-run_once("xscreensaver", "-no-splash")
 run_once("xss-lock", "-- i3lock -c 000000")
 run_once("xfsettingsd")
 run_once("xfce4-power-manager")
