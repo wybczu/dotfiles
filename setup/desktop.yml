@@ -91,6 +91,7 @@
       - name: ltrace
       - name: stow
       - name: silversearcher-ag
+      - name: calibre
       # networking tools
       - name: iftop
       - name: mtr
@@ -194,6 +195,7 @@
       - name: editor
         path: /usr/bin/vim.nox
     default_applications:
+      - { mimetype: application/pdf, application: evince.desktop }
       - { mimetype: x-scheme-handler/http, application: firefox.desktop }
       - { mimetype: x-scheme-handler/https, application: firefox.desktop }
     ferm_configuration: |
@@ -298,6 +300,7 @@
         - bin/
         - .vim/backups # vim backups
         - .local/share/applications/ # stores mimeapps.list
+      tags: ['configuration::defaults']
 
     - name: get a list default applications
       command: >
