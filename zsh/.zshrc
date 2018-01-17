@@ -7,7 +7,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 ZSH_THEME="gentoo-luk"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git vagrant pip ssh-agent golang colored-man-pages python jira)
+plugins=(git vagrant pip ssh-agent gpg-agent golang colored-man-pages python)
 
 export EDITOR='vim'
 export GOPATH=$HOME/go
