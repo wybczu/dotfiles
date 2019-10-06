@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -o pipefail
+
+DEST_DIR="${HOME}/Pictures/wallpapers"
+
+BASE_URL="https://www.bing.com/"
+SEARCH_URL="${BASE_URL}/HPImageArchive.aspx?format=js&idx=0&n=1&pid=hp"
+SEARCH_RESULT="$( curl -s "${SEARCH_URL}" )"
+
+WALLPAPER_URL="${BASE_URL}/$( echo "${SEARCH_RESULT}" | jq -r '.images[0].url' )"
+WALLPAPER_INFO="$(  echo "${SEARCH_RESULT}" | jq -r '.images[0].copyright' )"
+WALLPAPER_FILENAME="${DEST_DIR}/bing_$( date +'%Y%m%d' ).jpg"
+
+mkdir -p "${DEST_DIR}"
+
+echo "${WALLPAPER_INFO}" > "${WALLPAPER_FILENAME/%.jpg/.txt}"
+
+curl -o "${WALLPAPER_FILENAME}" -sL "${WALLPAPER_URL}"
+
+ln -sf "${WALLPAPER_FILENAME}" "${DEST_DIR}/current"
+
+feh --bg-fill "${WALLPAPER_FILENAME}"
