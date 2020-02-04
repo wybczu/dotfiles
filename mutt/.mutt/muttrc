@@ -4,7 +4,6 @@
 # ---------------------------------------------------------------------------
 
 # general config
-  set alias_file          = ~/.mutt/aliases
   set certificate_file    = ~/.mutt/certificates
   set charset             = utf-8
   set check_new           = yes
@@ -67,7 +66,6 @@ source ~/.mutt/colors
 source ~/.mutt/gpg
 source ~/.mutt/lists
 source ~/.mutt/macros
-source $alias_file
 source `FILE=$HOME/.mutt/sidebar; mutt -v | grep -Fq sidebar || FILE=/dev/null; echo $FILE`
 
 # machine specific configuration
