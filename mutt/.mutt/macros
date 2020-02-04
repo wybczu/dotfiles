@@ -30,4 +30,7 @@ macro index,pager A \
 	"<pipe-message>khard add-email<return>" \
 	"add the sender email address to khard"
 
+macro attach s '<save-entry><bol>~/tmp/<eol>'
+macro attach B '<pipe-message>cat > /tmp/mutt.html; chromium --incognito /tmp/mutt.html<enter>'
+
 # vim: ft=muttrc
