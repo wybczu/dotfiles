@@ -5,25 +5,9 @@ set mask         = !^\\.[^.]
 set record       = +Sent
 set postponed    = +Drafts
 set trash        = +Trash
-set mail_check   = 60
+set mail_check   = 5
 set pgp_sign_as  = 0x25AA83DFBD551FBB!
-set mailcap_path = /etc/mailcap
 
-
-mailboxes "+INBOX" `\\
-
- for file in ~/Mail/*; do \\
-
-   box=$(basename "$file"); \\
-
-   if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \\
-
-       -a ! "$box" = '.subscriptions' -a ! "$box" = 'INBOX' ]; then \\
-
-     echo -n "\"+$box\" "; \\
-
-   fi; \\
-
- done`
+mailboxes "+INBOX" `$HOME/.mutt/scripts/list-mailboxes.py $HOME/Mail`
 
 # vim: ft=muttrc
