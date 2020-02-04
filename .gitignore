@@ -1,6 +1,5 @@
-mail/.mutt/cache/*
-mail/.mutt/certificates
-mail/.mutt/aliases
+mutt/.mutt/aliases
 vim/.vim/backups
 vim/.vim/.netrwhist
 vim/.vim/bundle/*
+
