@@ -14,7 +14,7 @@
   set fast_reply
   set forward_format      = "Fwd: %s"
   set include
-  set index_format        ="%4C %Z %{%b %d/%m} | %-15.15L | %s"
+  set index_format        ="%4C %Z %{%b %d/%m} | %-15.15F | %s"
   set ispell              = "aspell -e -c"
 unset markers
   set menu_scroll         = no
@@ -37,6 +37,7 @@ unset markers
 unset wait_key
   set mail_check_stats
   set strict_threads
+  set beep_new
 
 # cache
   set header_cache        = ~/.mutt/cache/headers
@@ -56,9 +57,10 @@ hdr_order   From: To: CC: Subject: Date: To: Bcc: User-agent:
 my_hdr      X-Clacks-Overhead: GNU Terry Pratchett
 
 # keybinds
+bind        pager   k           previous-line
+bind        pager   j           next-line
 bind        pager   <up>        previous-line
 bind        pager   <down>      next-line
-bind        pager   G           bottom
 
 source ~/.mutt/profiles/common
 source ~/.mutt/colors
@@ -70,5 +72,7 @@ source `FILE=$HOME/.mutt/sidebar; mutt -v | grep -Fq sidebar || FILE=/dev/null; 
 
 # machine specific configuration
 source `FILE=$HOME/.mutt/profiles/$( hostname -s); [ -f $FILE ] || FILE=/dev/null; echo $FILE`
+
+set sendmail="/usr/bin/msmtp"
 
 # vim: ft=muttrc
