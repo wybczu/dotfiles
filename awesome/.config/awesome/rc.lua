@@ -73,6 +73,8 @@ awful.layout.layouts = {
 }
 -- }}}
 
+beautiful.notification_icon_size = 64
+
 -- {{{ Helper functions
 local function client_menu_toggle_fn()
     local instance = nil
