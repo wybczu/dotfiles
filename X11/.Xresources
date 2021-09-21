@@ -1,6 +1,9 @@
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
+Xft.rgba:       rgb
+Xft.autohint:   0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting:    1
+Xft.antialias:  1
 
 URxvt.termName: rxvt-256color
 URxvt.imLocale: pl_PL.UTF-8
@@ -74,3 +77,5 @@ URxvt.color250: #d5c4a1
 URxvt.buffered: false
 
 URxvt.cutchars: "`\"'&()*,;<=>?@[]^{|}│─"
+
+
