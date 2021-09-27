@@ -25,30 +25,16 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'rodjek/vim-puppet'
 Plugin 'saltstack/salt-vim'
 Plugin 'fatih/vim-go'
-"Plugin 'chase/vim-ansible-yaml'
-Plugin 'pearofducks/ansible-vim'
-"Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-scripts/SyntaxRange'
 Plugin 'vim-scripts/bats.vim'
-Plugin 'Valloric/YouCompleteMe'
-"Plugin 'vimwiki/vimwiki'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/calendar-vim'
-Plugin 'RobbieClarken/vim-haproxy'
-Plugin 'vim-scripts/spec.vim'
-"Plugin 'vim-syntastic/syntastic'
-Plugin 'hashivim/vim-terraform'
 Plugin 'junegunn/goyo.vim'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'bogado/file-line'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'stephpy/vim-yaml'
-Plugin 'chr4/nginx.vim'
-Plugin 'wgwoods/vim-systemd-syntax'
 Plugin 'solarnz/arcanist.vim'
 Plugin 'gabrielelana/vim-markdown'
 
@@ -104,8 +90,6 @@ autocmd FileType txt setlocal textwidth=78
 
 autocmd FileType tex setlocal spell
 autocmd FileType tex setlocal textwidth=78
-
-autocmd FileType vimwiki setlocal spell
 
 autocmd FileType adoc setlocal spell
 autocmd FileType adoc setlocal textwidth=78
@@ -180,15 +164,6 @@ let g:go_fmt_command = "goimports"
 " mileszs/ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" vimwiki/vimwiki
-let g:vimwiki_list = [{
-	\ 'path': '~/notes/',
-	\ 'syntax': 'markdown',
-	\ 'ext': '.md',
-	\ 'custom_wiki2html': '~/notes/scripts/wiki2html.sh'
-\}]
-let g:vimwiki_url_maxsave = 0
-
 " majutsushi/tagbar
 let g:tagbar_type_puppet = {
 	\ 'ctagstype': 'puppet',
@@ -207,27 +182,4 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" Valloric/YouCompleteMe
-" https://github.com/SirVer/ultisnips/issues/512#issuecomment-111733631
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-let g:syntastic_ignore_files = ['\m\.bats$']
-let g:syntastic_mode_map = { 'mode': 'active',
-                               \ 'passive_filetypes': ['java'] }
-
-
 let g:vim_markdown_folding_disabled = 1
-
