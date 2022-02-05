@@ -2,4 +2,5 @@ mutt/.mutt/aliases
 vim/.vim/backups
 vim/.vim/.netrwhist
 vim/.vim/bundle/*
+vdirsyncer/.vdirsyncer/status/
 
