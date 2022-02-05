@@ -1,0 +1,17 @@
+#!/bin/bash
+	
+if [[ "$EUID" -ne 0 ]]; then
+	echo "Please run as root."
+	exit 1
+fi
+
+TEMP="$( mktemp -ud )"
+
+
+git clone --depth 1 git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git "${TEMP}"
+
+mkdir -p /lib/firmware/{i915,ath10k}
+cp "${TEMP}"/i915/*.bin /lib/firmware/i915/
+cp -r "${TEMP}"/ath10k/* /lib/firmware/ath10k/
+
+rm -rf "${TEMP}"
