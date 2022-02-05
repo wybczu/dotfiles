@@ -17,5 +17,5 @@ type             = IMAP
 remotehost       = imap.fastmail.com
 remoteuser       = luk@wybcz.pl
 tls              = yes
-remotepasseval   = keyring.get_password('wybcz-mail', 'luk@wybcz.pl')
-cert_fingerprint = edd7ee170863afd2bbfbede31a6f9354c99ee0b0
+remotepasseval   = get_password('wybcz-mail', 'luk@wybcz.pl')
+cert_fingerprint = dabc543700b3a4424017ffac7ee366a7825062e835158d25c0edf02f96c833d379d4bfd08317a95f871780cee8fba21a65c1bb4a3f6f9b2d1b763ab8a9a4171b
