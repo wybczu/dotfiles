@@ -3,7 +3,7 @@
 ## Prerequisites
 
 ```bash
-$ sudo apt install stow git python3-pip python3-apt python3-virtualenv
+$ sudo apt install stow git python3-pip python3-apt python3-venv
 $ git clone git@github.com:wybczu/dotfiles.git ~/.dotfiles
 ```
 
@@ -21,7 +21,7 @@ selected following tasks during the install:
 To run the Ansible playbook execute:
 
 ```bash
-$ python -m venv .ansible-venv
+$ python3 -m venv .ansible-venv
 # source .ansible-venv/bin/activate
 $ ansible-playbook -D -i "localhost," setup/desktop.yml
 ```

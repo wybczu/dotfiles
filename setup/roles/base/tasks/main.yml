@@ -19,7 +19,7 @@
   tags: ["base", "packages"]
 
 - name: create basic directories in user's home
-  ansible.builtin,file:
+  ansible.builtin.file:
     name: "{{ lookup('env', 'HOME') }}/{{ item }}"
     state: directory
   with_items:
