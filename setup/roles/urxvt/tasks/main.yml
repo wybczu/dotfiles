@@ -3,7 +3,7 @@
 - name: install urxvt
   ansible.builtin.apt:
     pkg:
-      - rxvt-unicode-256color
+      - rxvt-unicode
       - ncurses-term
     state: latest
   become: yes

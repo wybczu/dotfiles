@@ -1,10 +1,18 @@
 ---
 
+- name: configure experimental repository
+  ansible.builtin.apt_repository:
+    repo: deb http://deb.debian.org/debian experimental main
+    state: present
+    update_cache: yes
+  become: yes
+  tags: ["spotify", "packages", "3rd-party-packages"]
+
 - name: make sure Firefox is installed
   ansible.builtin.apt:
     name: firefox
-    state: present
-  become: yes
+    default_release: experimental
+    state: latest
   tags: ["firefox", "configuration"]
 
 - name: set Firefox as the default x-www-browser

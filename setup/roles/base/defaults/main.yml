@@ -13,7 +13,6 @@ base_packages:
   - chrony
   - cups
   # - direnv - not in testing
-  - dirmgr
   - etckeeper
   - fdupes
   - fwupd
@@ -49,6 +48,8 @@ base_packages:
   - tree
   - unrar
   - unzip
+  - wine
+  - winetricks
   - wireguard
   - wireguard-tools
   - zip
@@ -78,7 +79,7 @@ base_packages:
   - dzen2
   - eog
   - feh
-  - freerdp-x11
+  - freerdp2-x11
   - gimp
   - gnuplot
   - goldendict
@@ -96,7 +97,7 @@ base_packages:
   - network-manager-vpnc-gnome
   - okular # supports encrypted PDF attachments
   - pavucontrol
-  - qnapi
+  - redshift-gtk
   - rofi
   - suckless-tools
   - vlc
@@ -117,7 +118,6 @@ base_packages:
   - ipcalc
   - lftp
   - mtr
-  - mtr-tiny
   - netcat-traditional
   - nmap
   - openvpn
@@ -152,13 +152,13 @@ base_packages:
   # messaging & e-mail
   - irssi
   - khal
-  - khard
+  #- khard
   - msmtp
   - msmtp-mta
   - mutt
   - notmuch
   - notmuch-mutt
-  - offlineimap
+  #- offlineimap
   - urlview
   - weechat
 
@@ -187,8 +187,7 @@ base_packages:
   - git
   - git-buildpackage
   - git-svn
-  - ipython
-  - java-package
+  - ipython3
   - jq
   - linux-headers-amd64
   - manpages-dev
@@ -211,14 +210,8 @@ base_packages:
   - tidy
   - tig
 
-  # wine
-  - wine
-  - winetricks
-
   # virtualization & containers
   - virtinst
   - virt-manager
-  - virtualbox
-  - virtualbox-qt
   - qemu-utils
   - qemu-system-x86
