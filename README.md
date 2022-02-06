@@ -3,8 +3,27 @@
 ## Prerequisites
 
 ```bash
-$ sudo apt install stow git ansible
+$ sudo apt install stow git python3-pip python3-apt python3-virtualenv
 $ git clone git@github.com:wybczu/dotfiles.git ~/.dotfiles
+```
+
+## Ansible Desktop Setup
+
+Warning, the Ansible playbook is super-debian-specific! It assumes that you
+selected following tasks during the install:
+
+- desktop,
+- gnome-desktop,
+- xfce-desktop,
+- ssh-server,
+- laptop - when running on a laptop.
+
+To run the Ansible playbook execute:
+
+```bash
+$ python -m venv .ansible-venv
+# source .ansible-venv/bin/activate
+$ ansible-playbook -D -i "localhost," setup/desktop.yml
 ```
 
 ## Manual setup

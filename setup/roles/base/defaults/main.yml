@@ -198,12 +198,10 @@ base_packages:
   - pbuilder
   - pipenv
   - pylint
-  - python
   - python3
   - python3-dev
-  - python-dev
-  - python-pip
-  - python-sphinx
+  - python3-pip
+  - python3-virtualenv
   - quilt
   - rsync
   - ruby
@@ -212,7 +210,6 @@ base_packages:
   - subversion
   - tidy
   - tig
-  - virtualenv
 
   # wine
   - wine
