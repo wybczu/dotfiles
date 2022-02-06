@@ -5,6 +5,7 @@
     name: firefox-esr
     default_release: experimental
     state: latest
+  become: yes
   tags: ["firefox", "configuration"]
 
 - name: set Firefox as the default x-www-browser
