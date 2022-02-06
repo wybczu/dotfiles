@@ -1,0 +1,14 @@
+---
+
+- name: install zsh
+  ansible.builtin.apt:
+    name: zsh
+    state: latest
+  become: yes
+  tags: ["oh-my-zsh", "packages"]
+
+- name: install oh-my-zsh
+  ansible.builtin.git:
+    repo: git://github.com/robbyrussell/oh-my-zsh.git
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
+  tags: ["oh-my-zsh", "configuration"]

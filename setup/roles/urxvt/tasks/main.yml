@@ -1,0 +1,17 @@
+---
+
+- name: install urxvt
+  ansible.builtin.apt:
+    pkg:
+      - rxvt-unicode-256color
+      - ncurses-term
+    state: latest
+  become: yes
+  tags: ["urxvt", "packages"]
+
+- name: set urxvt as the default X terminal emulator
+  community.general.alternatives:
+    name: x-terminal-emulator
+    path: /usr/bin/urxvt
+  become: yes
+  tags: ["urxvt", "configuration"]

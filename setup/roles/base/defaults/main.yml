@@ -1,0 +1,229 @@
+---
+
+base_packages:
+  # system packages & utils
+  - apt-transport-https
+  - bar
+  - bat
+  - bluetooth
+  - borgbackup
+  - bpfcc-tools
+  - bpftrace
+  - bzip2
+  - chrony
+  - cups
+  - direnv
+  - dirmgr
+  - etckeeper
+  - fdupes
+  - fwupd
+  - grc
+  - htop
+  - iotop
+  - less
+  - links
+  - lsof
+  - ltrace
+  - lz4
+  - mc
+  - moreutils
+  - ncdu
+  - num-utils
+  - p7zip-full
+  - pm-utils
+  - psmisc
+  - python-is-python3
+  - pv
+  - qalc
+  - rlwrap
+  - screen
+  - silversearcher-ag
+  - stow
+  - strace
+  - sudo
+  - time
+  - tmux
+  - tree
+  - unrar
+  - unzip
+  - wireguard
+  - wireguard-tools
+  - zip
+
+  # webbrowsers
+  - chromium
+
+  # passwords-ish stuff
+  - apg
+  - gnome-keyring
+  - keepassxc
+  - libsecret-tools
+  - nitrocli
+  - nitrokey-app
+  - python3-keyring
+  - python3-pykeepass
+  - seahorse
+  - yubikey-personalization
+  - yubikey-personalization-gui
+
+  # window manager and X stuff
+  - arandr
+  - awesome
+  - awesome-extra
+  - calibre
+  - darktable
+  - dzen2
+  - eog
+  - evince
+  - feh
+  - freerdp-x11
+  - gimp
+  - gnuplot
+  - goldendict
+  - graphviz
+  - i3lock
+  - imagemagick
+  - inkscape
+  - network-manager
+  - network-manager-gnome
+  - network-manager-openconnect
+  - network-manager-openconnect-gnome
+  - network-manager-openvpn
+  - network-manager-openvpn-gnome
+  - network-manager-pptp
+  - network-manager-pptp-gnome
+  - network-manager-vpnc
+  - network-manager-vpnc-gnome
+  - okular # supports encrypted PDF attachments
+  - pavucontrol
+  - python-keyring
+  - qnapi
+  - rofi
+  - suckless-tools
+  - surfraw
+  - vlc
+  - xfce4-goodies
+  - xfonts-terminus
+  - xss-lock
+  - xtightvncviewer
+  - zathura
+  - zeal
+
+  # networking tools
+  - aria2
+  - curl
+  - dnsutils
+  - hping3
+  - httpie
+  - iftop
+  - ipcalc
+  - lftp
+  - mtr
+  - mtr-tiny
+  - netcat-traditional
+  - nmap
+  - openvpn
+  - rtorrent
+  - sipcalc
+  - socat
+  - tcpdump
+  - telnet
+  - whois
+  - wireshark
+
+  # editing
+  - asciidoctor
+  - aspell-en
+  - aspell-pl
+  - libreoffice
+  - myspell-pl
+  - pandoc
+  - pdftk
+  - rubber
+  - texlive
+  - texlive-bibtex-extra
+  - texlive-fonts-extra
+  - texlive-lang-polish
+  - texlive-latex-extra
+  - wpolish
+
+  # GPG
+  - gnupg2
+  - signing-party # for caff
+
+  # messaging & e-mail
+  - irssi
+  - khal
+  - khard
+  - msmtp
+  - msmtp-mta
+  - mutt
+  - notmuch
+  - notmuch-mutt
+  - offlineimap
+  - urlview
+  - weechat
+
+  # development tools
+  - arduino
+  - autoconf
+  - automake
+  - avrdude
+  - bison
+  - black
+  - build-essential
+  - busybox-static
+  - clang
+  - clang-format
+  - cmake
+  - cowbuilder
+  - cscope
+  - debhelper
+  - devscripts
+  - default-jdk
+  - dh-make
+  - diffstat
+  - esptool
+  - exuberant-ctags
+  - flex
+  - git
+  - git-buildpackage
+  - git-svn
+  - ipython
+  - java-package
+  - jq
+  - linux-headers-amd64
+  - manpages-dev
+  - meld
+  - mercurial
+  - nodejs
+  - pbuilder
+  - pipenv
+  - pylint
+  - python
+  - python3
+  - python3-dev
+  - python-dev
+  - python-pip
+  - python-sphinx
+  - quilt
+  - rsync
+  - ruby
+  - ruby-dev
+  - shellcheck
+  - subversion
+  - tidy
+  - tig
+  - virtualenv
+
+  # wine
+  - wine
+  - winetricks
+
+  # virtualization & containers
+  - virtinst
+  - virt-manager
+  - virtualbox
+  - virtualbox-qt
+  - qemu-utils
+  - qemu-system-x86

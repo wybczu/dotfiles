@@ -3,11 +3,19 @@
 ## Prerequisites
 
 ```bash
-$ sudo apt install stow git
+$ sudo apt install stow git ansible
 $ git clone git@github.com:wybczu/dotfiles.git ~/.dotfiles
 ```
 
-## vim
+## Manual setup
+
+### MS Fonts
+
+```bash
+$ sudo apt install ttf-mscorefonts-installer
+```
+
+### Vim
 
 ```bash
 $ stow vim
@@ -15,7 +23,7 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 $ vim +PluginInstall +qall
 ```
 
-## mbsync
+### mbsync
 
 ```bash
 $ mkdir -p ~/.config/systemd/user
