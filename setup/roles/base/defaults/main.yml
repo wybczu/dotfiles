@@ -17,8 +17,10 @@ base_packages:
   - etckeeper
   - fdupes
   - fwupd
+  - graphviz
   - grc
   - htop
+  - imagemagick
   - iotop
   - less
   - links
@@ -41,6 +43,7 @@ base_packages:
   - stow
   - strace
   - sudo
+  - surfraw
   - time
   - tmux
   - tree
@@ -74,15 +77,12 @@ base_packages:
   - darktable
   - dzen2
   - eog
-  - evince
   - feh
   - freerdp-x11
   - gimp
   - gnuplot
   - goldendict
-  - graphviz
   - i3lock
-  - imagemagick
   - inkscape
   - network-manager
   - network-manager-gnome
@@ -96,11 +96,9 @@ base_packages:
   - network-manager-vpnc-gnome
   - okular # supports encrypted PDF attachments
   - pavucontrol
-  - python-keyring
   - qnapi
   - rofi
   - suckless-tools
-  - surfraw
   - vlc
   - xfce4-goodies
   - xfonts-terminus
