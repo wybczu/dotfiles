@@ -16,6 +16,7 @@ base_packages:
   - etckeeper
   - fdupes
   - fwupd
+  - gnupg2
   - graphviz
   - grc
   - htop
@@ -37,7 +38,9 @@ base_packages:
   - pv
   - qalc
   - rlwrap
+  - rsync
   - screen
+  - signing-party
   - silversearcher-ag
   - stow
   - strace
@@ -145,20 +148,14 @@ base_packages:
   - texlive-latex-extra
   - wpolish
 
-  # GPG
-  - gnupg2
-  - signing-party # for caff
-
   # messaging & e-mail
   - irssi
-  - khal
-  #- khard
+  - maildir-utils
   - msmtp
   - msmtp-mta
   - mutt
   - notmuch
   - notmuch-mutt
-  #- offlineimap
   - urlview
   - weechat
 
@@ -202,7 +199,6 @@ base_packages:
   - python3-pip
   - python3-venv
   - quilt
-  - rsync
   - ruby
   - ruby-dev
   - shellcheck

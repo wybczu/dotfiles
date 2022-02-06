@@ -27,4 +27,5 @@
     - tmp
     # stores mimeapps.list
     - .local/share/applications/
+    - .config/systemd/user
   tags: ["base", "configuration"]
