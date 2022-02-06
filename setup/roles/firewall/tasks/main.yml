@@ -1,0 +1,20 @@
+---
+
+- name: install nftables
+  ansible.builtin.apt:
+    name: nftables
+    state: latest
+  become: yes
+  tags: ["firewall", "packages"]
+
+- name: copy firewall configuration
+  ansible.builtin.copy:
+    src: nftables.conf
+    dest: /etc
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,g=rx
+  become: yes
+  notify:
+    - restart nftables
+  tags: ["firewall", "configuration"]

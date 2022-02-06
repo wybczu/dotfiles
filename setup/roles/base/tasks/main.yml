@@ -1,0 +1,31 @@
+---
+
+- name: disable apt recommends
+  ansible.builtin.copy:
+    src: 02norecommends
+    dest: /etc/apt/apt.conf.d/
+    owner: root
+    group: root
+    mode: u=rw,g=r,g=r
+  become: yes
+  tags: ["base", "configuration"]
+
+- name: install base packages
+  ansible.builtin.apt:
+    name: "{{ base_packages }}"
+    state: latest
+    update_cache: yes
+  become: yes
+  tags: ["base", "packages"]
+
+- name: create basic directories in user's home
+  ansible.builtin.file:
+    name: "{{ lookup('env', 'HOME') }}/{{ item }}"
+    state: directory
+  with_items:
+    - bin
+    - tmp
+    # stores mimeapps.list
+    - .local/share/applications/
+    - .config/systemd/user
+  tags: ["base", "configuration"]

@@ -1,0 +1,15 @@
+---
+
+- name: make sure Evince is installed
+  ansible.builtin.apt:
+    name: evince
+    state: present
+  become: yes
+  tags: ["evince", "packages"]
+
+- name: set Evince as the default browser for PDFs
+  ansible.builtin.command: >
+    /usr/bin/xdg-mime default evince.desktop {{ item }}
+  loop:
+    - application/pdf
+  tags: ["evince", "configuration"]

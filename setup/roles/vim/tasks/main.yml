@@ -1,0 +1,23 @@
+---
+
+- name: install vim
+  ansible.builtin.apt:
+    pkg:
+      - vim-nox
+      - vim-gtk
+    state: latest
+  become: yes
+  tags: ["vim", "packages"]
+
+- name: set vim as the default editor
+  community.general.alternatives:
+    name: editor
+    path: /usr/bin/vim.nox
+  become: yes
+  tags: ["vim", "configuration"]
+
+- name: install Vim Vundle plugin
+  ansible.builtin.git:
+    repo: "{{ vim_vundle_repo_url }}"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/Vundle.vim"
+  tags: ["vim", "configuration"]

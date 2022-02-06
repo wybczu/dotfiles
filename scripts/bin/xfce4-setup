@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -o pipefail
+
+SHORTCUTS=(
+	'/commands/custom/XF86Mail'
+	'/commands/custom/<Primary><Alt>t'
+	'/commands/custom/XF86WWW'
+	'/commands/custom/HomePage'
+	'/commands/custom/<Primary><Alt>f'
+	'/commands/custom/<Super>e'
+	'/commands/custom/<Alt>F3'
+	'/commands/custom/<Super>r'
+	'/commands/custom/<Alt>F2'
+	'/commands/custom/<Super>p'
+	'/commands/custom/<Alt>F1'
+	'/commands/custom/Print'
+	'/commands/custom/<Primary><Alt>Delete'
+	'/commands/custom/<Primary><Shift>Escape'
+	'/commands/custom/<Primary>Escape'
+	'/commands/custom/<Primary><Alt>l'
+	'/commands/custom/<Primary><Alt>Escape'
+)
+
+# Disable shortcuts
+for s in "${SHORTCUTS[@]}"; do
+	xfconf-query -c xfce4-keyboard-shortcuts -p "$s" -r -R
+done
+
+# Configure power manager notifications
+xfconf-query -c xfce4-power-manager -np /xfce4-power-manager/general-notification -s true
+xfconf-query -c xfce4-power-manager -np /xfce4-power-manager/show-tray-icon -s true
+
+# Configure fonts
+xfconf-query -c xsettings -np /Gtk/FontName -s "Sans 8"
+xfconf-query -c xsettings -np /Gtk/MonospaceFontName -s "Monospace 8"
+xfconf-query -c xsettings -np /Xft/HintStyle -s "hintmedium"
+
+# Notify about new displays
+xfconf-query -c displays -np /Notify -s true

@@ -1,0 +1,25 @@
+---
+
+- name: make sure Firefox is installed
+  ansible.builtin.apt:
+    name: firefox-esr
+    default_release: experimental
+    state: latest
+  become: yes
+  tags: ["firefox", "configuration"]
+
+- name: set Firefox as the default x-www-browser
+  community.general.alternatives:
+    name: x-www-browser
+    path: /usr/bin/firefox
+  become: yes
+  tags: ["firefox", "configuration"]
+
+- name: set Firefox as the default browser for HTTP and HTTPS
+  ansible.builtin.command: >
+    /usr/bin/xdg-mime default firefox.desktop {{ item }}
+  loop:
+    - x-scheme-handler/http
+    - x-scheme-handler/https
+  tags: ["firefox", "configuration"]
+
