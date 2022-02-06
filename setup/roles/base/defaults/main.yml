@@ -57,9 +57,6 @@ base_packages:
   - wireguard-tools
   - zip
 
-  # webbrowsers
-  - chromium
-
   # passwords-ish stuff
   - apg
   - gnome-keyring
@@ -78,6 +75,7 @@ base_packages:
   - awesome
   - awesome-extra
   - calibre
+  - chromium
   - darktable
   - dzen2
   - eog
@@ -150,7 +148,7 @@ base_packages:
 
   # messaging & e-mail
   - irssi
-  - maildir-utils
+  - mblaze
   - msmtp
   - msmtp-mta
   - mutt
