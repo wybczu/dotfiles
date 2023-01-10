@@ -149,6 +149,7 @@ base_packages:
   # messaging & e-mail
   - irssi
   - mblaze
+  - mbsync
   - msmtp
   - msmtp-mta
   - mutt

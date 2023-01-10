@@ -3,7 +3,6 @@
 - name: make sure Firefox is installed
   ansible.builtin.apt:
     name: firefox-esr
-    default_release: experimental
     state: latest
   become: yes
   tags: ["firefox", "configuration"]
