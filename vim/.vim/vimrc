@@ -37,12 +37,12 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'stephpy/vim-yaml'
 Plugin 'solarnz/arcanist.vim'
 Plugin 'gabrielelana/vim-markdown'
+Plugin 'tpope/vim-rhubarb'
 
 " Color schemas
 Plugin 'brafales/vim-desert256'
 Plugin 'vim-scripts/wombat256.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'joshdick/onedark.vim'
 
 syntax on
 filetype plugin on
@@ -51,7 +51,10 @@ filetype plugin indent on
 " Color scheme
 set t_Co=256
 set background=dark
-colorscheme sahara
+set termguicolors
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 
 set number
 set nocompatible
