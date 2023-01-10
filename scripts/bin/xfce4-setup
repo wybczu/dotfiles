@@ -31,8 +31,8 @@ for s in "${SHORTCUTS[@]}"; do
 done
 
 # Configure power manager notifications
-xfconf-query -c xfce4-power-manager -np /xfce4-power-manager/general-notification -s true
-xfconf-query -c xfce4-power-manager -np /xfce4-power-manager/show-tray-icon -s true
+xfconf-query -c xfce4-power-manager -np /xfce4-power-manager/general-notification -t bool -s true
+xfconf-query -c xfce4-power-manager -np /xfce4-power-manager/show-tray-icon -t bool -s true
 
 # Configure fonts
 xfconf-query -c xsettings -np /Gtk/FontName -s "Sans 8"
@@ -40,4 +40,4 @@ xfconf-query -c xsettings -np /Gtk/MonospaceFontName -s "Monospace 8"
 xfconf-query -c xsettings -np /Xft/HintStyle -s "hintmedium"
 
 # Notify about new displays
-xfconf-query -c displays -np /Notify -s true
+xfconf-query -c displays -np /Notify -t bool -s true
