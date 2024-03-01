@@ -7,6 +7,8 @@
 ; based on https://github.com/jakubnabrdalik/gitkurwa
 ; and https://bitbucket.org/durdn/cfg/src/c4ea8605e9ffd5f6cced30af31039c2e272429fb/.gitconfig
 [alias]
+	abbrev = rev-list -n 1 --abbrev-commit
+	abbrev8 = rev-list -n 1 --abbrev-commit --abbrev=8
 	ci = commit -v
 	co = checkout
 	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
@@ -22,12 +24,15 @@
 	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	lc  = "!f() { git ll "$1"^.."$1"; }; f"
+	changelog = log --pretty=format:"%h %an %ad %s" --date=short $0..$1
+	fpush = push --force-with-lease
 
 [apply]
 	whitespace = nowarn
 
 [core]
 	pager = less -r
+	hooksPath = /Users/luk/.config/git/hooks
 
 [help]
 	autocorrect = 1
@@ -40,6 +45,8 @@
 
 [diff]
 	mnemonicprefix = true
+	renameLimit = 10000
+	algorithm = histogram
 
 [merge]
 	tool = vimdiff
@@ -57,3 +64,13 @@
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[rerere]
+	enabled = true
+	autoUpdate = true
