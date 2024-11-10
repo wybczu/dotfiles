@@ -1,59 +1,57 @@
+[alias]
+	ci = commit -v
+	co = checkout
+	fpush = push --force-with-lease
+	ls = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+	patch = !sh -c 'git format-patch --stdout $0...$0~'
+	st = status -sb
+	tag-with-date = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
+
+[apply]
+	whitespace = nowarn
+
+[branch]
+	sort = -committerdate
+
 [color]
 	ui = auto
 
 [color "status"]
 	untracked = cyan
 
-; based on https://github.com/jakubnabrdalik/gitkurwa
-; and https://bitbucket.org/durdn/cfg/src/c4ea8605e9ffd5f6cced30af31039c2e272429fb/.gitconfig
-[alias]
-	ci = commit -v
-	co = checkout
-	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
-	llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
-	showorigin = !sh -c "isHash=true; for i in `git ls-remote -h origin`; do [ ! -z $isHash ] && echo \" $i\" || printf \"%-8s %8s %-8s%-3s %-10s %-20s\" `git show -s --pretty=format:\"%C(yellow)%h %Cred%ad %Cblue%an\" --date=relative $i` ; [ ! -z $isHash ] && isHash=\"\" || isHash=true ; done"
-	tag-with-date = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
-	unstage = reset HEAD --
-	patch = !sh -c 'git format-patch --stdout $0...$0~'
-	purr = pull --rebase
-	puff = pull --ff-only
-	st = status -sb
-	springcleaning = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
-	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	lc  = "!f() { git ll "$1"^.."$1"; }; f"
-
-[apply]
-	whitespace = nowarn
-
 [core]
 	pager = less -r
 
-[help]
-	autocorrect = 1
-
-[push]
-	default = current
-
-[pull]
-	default = current
-
 [diff]
+	algorith = histogram
 	mnemonicprefix = true
 
-[merge]
-	tool = vimdiff
-	conflictstyle = diff3
+[gpg]
+	program = gpg
 
-[rebase]
-	autosquash = true
+[help]
+	autocorrect = 1
 
 ; store user configuration outside repo
 [include]
 	path = ~/.gitconfig-user
 
-[gpg]
-	program = gpg
+[merge]
+	conflictstyle = zdiff3
+	tool = vimdiff
+
+[pull]
+	default = current
+
+[push]
+	autoSetupRemote = true
+
+[rebase]
+	autosquash = true
+
+[rerere]
+	autoUpdate = true
+	enabled = true
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
