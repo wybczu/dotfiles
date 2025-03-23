@@ -6,7 +6,7 @@ set record       = +Sent
 set postponed    = +Drafts
 set trash        = +Trash
 set mail_check   = 5
-set pgp_sign_as  = 0x25AA83DFBD551FBB!
+set pgp_sign_as  = 0x859AB6F33397461F!
 
 mailboxes "+INBOX" `$HOME/.mutt/scripts/list-mailboxes.py $HOME/Mail`
 
