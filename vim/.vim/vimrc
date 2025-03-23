@@ -38,6 +38,7 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'solarnz/arcanist.vim'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'mbbill/undotree'
 
 " Color schemas
 Plugin 'brafales/vim-desert256'
