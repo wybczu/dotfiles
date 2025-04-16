@@ -4,7 +4,7 @@ function prompt_char {
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%(!.%{$fg[red]%}.%{$fg[green]%}%n@)%m %{$fg[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
+PROMPT='%(!.%{$fg[red]%}.%{$fg[green]%}%n@)%m %{$FG[069]%}%(!.%1~.%~) $(_omz_git_prompt_info)%_$(prompt_char)%{$reset_color%} '
 
 #RPS1="${return_code}"
 
