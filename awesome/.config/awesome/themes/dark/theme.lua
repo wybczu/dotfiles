@@ -30,7 +30,7 @@ theme.colors.green   = "#859900ff"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Monospace Regular 8"
+theme.font      = "Clear Sans 8"
 
 -- {{{ Colors
 theme.fg_normal  = theme.colors.base02

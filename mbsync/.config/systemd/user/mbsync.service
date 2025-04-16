@@ -4,4 +4,4 @@ Description=mbsync service
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/mbsync -Va
-ExecStartPost=/usr/bin/mu index -q
+ExecStartPost=/usr/bin/notmuch new

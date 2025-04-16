@@ -1,0 +1,11 @@
+#!/bin/bash
+
+declare -A pkgs
+
+pkgs=(
+ [obsidian]=md.obsidian.Obsidian
+)
+
+cmd="$( basename "$0" )"
+
+flatpak run "${pkgs[$cmd]}" "$@"

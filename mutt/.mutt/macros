@@ -14,19 +14,12 @@ macro index <F9> \
 	"<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" \
 	"search and reconstruct owning thread (using notmuch)"
 
-macro index S \
-	"<shell-escape>offlineimap<enter>" \
-	"run offlineimap to sync all mail"
-
-macro index s \
-	"<shell-escape>offlineimap -f INBOX<enter>" \
-	"run offlineimap to sync inbox"
-
 macro index,pager A \
 	"<pipe-message>khard add-email<return>" \
 	"add the sender email address to khard"
 
 macro attach s '<save-entry><bol>~/tmp/<eol>'
+
 macro attach B '<pipe-message>cat > /tmp/mutt.html; chromium --incognito /tmp/mutt.html<enter>'
 
 # vim: ft=muttrc
